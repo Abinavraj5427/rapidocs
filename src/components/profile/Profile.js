@@ -6,11 +6,9 @@ import profile from '../../assets/Design2.PNG';
 
 const Profile = () => {
   return (
-    <div id = "profile">
-        <h1>Profile</h1>
-        <img src = {profile} id = "profile_img" alt = "Profile Image"></img>
-
-            
+    <div id='profile'>
+      <h1>Profile</h1>
+      <img src={profile} id='profile_img' alt='Profile Image'></img>
     </div>
   );
 };
