@@ -13,11 +13,6 @@ import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        transform: 'translateZ(10px)',
-        flexGrow: 1,
-        zIndex: 10,
-    },
     speedDial: {
         position: 'absolute',
         bottom: '4%',
