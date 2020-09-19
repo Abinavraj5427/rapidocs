@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Futura', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   background-color: #0e0b16;
   color: #e7dfdd;
@@ -315,12 +315,16 @@ button {
   background-color: #e7dfdd;
   margin: 5vh;
   padding: 7vh;
-  border-radius: 2vh;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  border-radius: 1vh;
+  -webkit-box-shadow: 20px 20px 50px #a139ca86;
+          box-shadow: 20px 20px 50px #a139ca86;
 }
 
 #doctor_form .center .tile h1 {
   color: black;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
 }
 
 #doctor_form .center .tile h2 {
@@ -334,6 +338,7 @@ button {
 
 #doctor_form .center .tile input[type=text], #doctor_form .center .tile input[type=date] {
   margin-bottom: 4vh;
+  margin-top: 1vh;
   border-style: solid;
   border-width: 2px;
   border-color: gray;

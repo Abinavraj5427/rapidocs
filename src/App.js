@@ -10,6 +10,7 @@ import db from "./firebase";
 import MyDoctor from "./components/forms/MyDoctor";
 import Procedure from "./components/forms/Procedure";
 
+
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
   useEffect(() => {
@@ -29,7 +30,6 @@ const App = () => {
     <Router>
       <Fragment>
         <Navbar />
-
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/profile" component={Profile} />
