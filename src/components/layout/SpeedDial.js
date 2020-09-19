@@ -14,9 +14,10 @@ import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        height: 100,
-        transform: 'translateZ(0px)',
+        transform: 'translateZ(10px)',
         flexGrow: 1,
+        zIndex: 10,
+        height: 100,
     },
     speedDial: {
         position: 'absolute',
@@ -38,10 +39,6 @@ export default function SpeedDialTooltipOpen() {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [hidden, setHidden] = React.useState(false);
-
-    const handleVisibility = () => {
-        setHidden((prevHidden) => !prevHidden);
-    };
 
     const handleOpen = () => {
         setOpen(true);
