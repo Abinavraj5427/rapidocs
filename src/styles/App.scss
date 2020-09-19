@@ -304,3 +304,36 @@ button {
     }
   }
 }
+
+.Menu {
+  padding: 1rem;
+  position: relative;
+  background: #282828;
+  height: 100%;
+
+  .menu-link {
+    color: $light-color;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding: 5px;
+  }
+
+  .menu-link:hover {
+    background-color: $accent-color;
+    cursor: pointer;
+  }
+
+  button {
+    background: none;
+    border: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    color: $light-color;
+  }
+}

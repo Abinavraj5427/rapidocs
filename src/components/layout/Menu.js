@@ -9,23 +9,24 @@ function Menu() {
   const history = useHistory();
   return (
     <div className="Menu">
+      <h1>Menu</h1>
       <div className="header">
-        <h1>Menu</h1>
         <IconButton id="closemenu" color="inherit" onClick={closeMenu}>
           <CloseIcon />
         </IconButton>
       </div>
       <div className="links">
-        <p onClick={() => history.push("/records")} className="link S">
+        <p onClick={() => history.push("/records")} className="menu-link link S">
           My Records
         </p>
-        <p onClick={() => history.push("/doctors")} className="link S">
+        <p onClick={() => history.push("/doctors")} className="menu-link link S">
           My Doctors
         </p>
-        <p onClick={() => history.push("/profile")} className="link S">
+        <p onClick={() => history.push("/profile")} className="menu-link link S">
           My Profile
         </p>
       </div>
+      
     </div>
   );
 }

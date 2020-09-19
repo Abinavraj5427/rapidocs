@@ -9,7 +9,7 @@ import Medication from '../forms/Medication';
 
 const Routes = () => {
   return (
-    <section className='container'>
+    <section >
       <Switch>
         <Route exact path='/records' component={Records} />
         <Route exact path='/doctors' component={MyDoctor} />
