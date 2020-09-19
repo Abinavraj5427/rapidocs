@@ -7,6 +7,7 @@ import Navbar from "./components/layout/Navbar";
 import Profile from "./components/profile/Profile";
 import firebase from "firebase";
 import db from "./firebase";
+import MyDoctor from "./components/forms/MyDoctor";
 
 const App = () => {
   // useEffect(() => {
@@ -43,6 +44,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/profile" component={Profile} />
+          <Route path="/docs" component={MyDoctor} />
           <Route component={Routes} />
         </Switch>
       </Fragment>
