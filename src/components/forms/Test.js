@@ -19,12 +19,12 @@ const TestForm = props => {
       onSubmit={e => {
         e.preventDefault();
         let user = firebase.auth().currentUser;
-        if (user) {
-          const id = user.uid;
-          firebase
-            .database()
-            .ref('patients/' + id)
-            .set(formData);
+          if (user) {
+              const id = user.uid;
+              const key = firebase.database().ref()
+                  .child('patients/' + { id } + '/tests').push().key;
+              updates['patients/' + { id } + '/tests/' + { key }] = { formData };
+              firebase.database().ref().update(updates); 
         }
       }}
     >
