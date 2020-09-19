@@ -128,6 +128,8 @@ img {
 .form input[type='email'],
 .form input[type='password'],
 .form input[type='number'],
+.form input[type='date'],
+.form input[type='file'],
 .form select,
 .form textarea {
   display: block;
@@ -154,14 +156,14 @@ button {
   width: 100%;
   text-align: center;
 
-  #profile_col{
-    width:50%;
-    
-    .profile_sep{
+  #profile_col {
+    width: 50%;
+
+    .profile_sep {
       margin-top: 10px;
       margin-bottom: 10px;
-  
-      #profile_img{
+
+      #profile_img {
         border-radius: 50%;
         border-color: 10px;
         border-style: solid;
@@ -169,7 +171,8 @@ button {
         height: 200px;
       }
 
-      input, input:focus{
+      input,
+      input:focus {
         text-align: center;
         width: 100%;
         height: 40px;
@@ -179,10 +182,7 @@ button {
         background-color: $light-color;
         font-size: 20px;
         color: $dark-color;
-        
       }
-
     }
   }
-  
 }

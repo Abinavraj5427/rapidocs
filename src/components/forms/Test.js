@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import firebase from 'firebase';
 
 const TestForm = props => {
@@ -18,10 +18,18 @@ const TestForm = props => {
       className='form'
       onSubmit={e => {
         e.preventDefault();
-        // code to push formData to DB
+        let user = firebase.auth().currentUser;
+        if (user) {
+          const phoneNumber = user.phoneNumber;
+          firebase
+            .database()
+            .ref('patients/' + phoneNumber)
+            .set(formData);
+        }
       }}
     >
       <div className='form-group'>
+        <label className='S'>Test Name</label>
         <input
           type='text'
           placeholder='Test Title'
@@ -32,6 +40,7 @@ const TestForm = props => {
         />
       </div>
       <div className='form-group'>
+        <label className='S'>Test Date</label>
         <input
           type='date'
           placeholder='Test Date'
@@ -42,6 +51,7 @@ const TestForm = props => {
         />
       </div>
       <div className='form-group'>
+        <label className='S'>Test Results File</label>
         <input
           type='text'
           placeholder='File Associated'
@@ -50,6 +60,7 @@ const TestForm = props => {
           onChange={onChange}
         />
       </div>
+      <input type='submit' />
     </form>
   );
 };
