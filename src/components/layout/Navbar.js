@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import firebase from "firebase";
 
 const Navbar = () => {
-  console.log("hi\n\n\n\n" + firebase.auth().currentUser);
+  // console.log("hi\n\n\n\n" + firebase.auth().currentUser);
   return (
     <nav className="navbar">
       <Link to="/">Logo</Link>

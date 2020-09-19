@@ -11,13 +11,13 @@ import MyDoctor from "./components/forms/MyDoctor";
 
 const App = () => {
   // useEffect(() => {
-  //   db.ref("patients")
-  //     .once("value")
-  //     .then(function (snapshot) {
-  //       console.log(snapshot.val());
-  //     });
+  //   // db.ref("patients")
+  //   //   .once("value")
+  //   //   .then(function (snapshot) {
+  //   //     console.log(snapshot.val());
+  //   //   });
 
-  //   db.ref("patients/" + "531381512").set({
+  //   db.ref("patients/asing@mail.com").set({
   //     name: "Aman Singh",
   //     email: "asing@mail.com",
   //   });

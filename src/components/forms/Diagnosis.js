@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import firebase from 'firebase';
 
 const Diagnosis = () => {
+  const [formData, setFormData] = useState({
+    title: '',
+    date: '',
+    file: '',
+  });
+
+  const { title, date, file } = formData;
+
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
   return (
     <form
       className='form'
@@ -9,10 +20,10 @@ const Diagnosis = () => {
         e.preventDefault();
         let user = firebase.auth().currentUser;
         if (user) {
-          const phoneNumber = user.phoneNumber;
+          const id = user.uid;
           firebase
             .database()
-            .ref('patients/' + phoneNumber)
+            .ref('patients/' + id)
             .set(formData);
         }
       }}

@@ -106,6 +106,19 @@ img {
   margin-bottom: 0.2em;
 }
 
+.btn {
+  display: inline-block;
+  background: #e7dfdd;
+  color: #0e0b16;
+  padding: 0.4em 1.3em;
+  font-size: 1.5em;
+  border: none;
+  margin-right: 0.5em;
+  border-radius: 0.7em;
+  text-align: center;
+  cursor: pointer;
+}
+
 .container {
   max-width: 1000px;
   margin: auto;
