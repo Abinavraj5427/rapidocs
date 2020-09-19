@@ -23,7 +23,7 @@ body {
   height: 100%;
   animation: pulse 5s infinite;
 
-  #root{
+  #root {
     height: 100%;
   }
 }
@@ -77,6 +77,19 @@ img {
   font-size: 1.5em;
   line-height: 1.2;
   margin-bottom: 0.2em;
+}
+
+.btn {
+  display: inline-block;
+  background: $light-color;
+  color: $dark-color;
+  padding: 0.4em 1.3em;
+  font-size: 1.5em;
+  border: none;
+  margin-right: 0.5em;
+  border-radius: 0.7em;
+  text-align: center;
+  cursor: pointer;
 }
 
 .container {
@@ -174,25 +187,22 @@ button {
   width: 100%;
   text-align: center;
 
-  
-
-  #profile_col{
+  #profile_col {
     // background-color: white;
     height: 100%;
-    
+
     @media screen and (min-width: 400px) {
-      width:40%;
+      width: 40%;
     }
 
     @media screen and (max-width: 400px) {
-      width:80%;
+      width: 80%;
     }
 
-    .profile_sep{
+    .profile_sep {
       margin-bottom: 1vh;
 
-  
-      #profile_img{
+      #profile_img {
         border-radius: 50%;
         border-color: 10px;
         border-style: solid;
@@ -200,17 +210,18 @@ button {
         height: 15vh;
       }
 
-      .input_rows{
+      .input_rows {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
 
-        input{
+        input {
           margin: 10px;
         }
       }
 
-      input,input:focus {
+      input,
+      input:focus {
         text-align: center;
         width: 100%;
         border-radius: 20px;
@@ -223,20 +234,21 @@ button {
       }
 
       @media screen and (min-width: 400px) {
-        input, input:focus{
-          height:40px;
+        input,
+        input:focus {
+          height: 40px;
         }
-      }  
+      }
 
       @media screen and (max-width: 400px) {
-        input,input:focus {
-          height:23px;
+        input,
+        input:focus {
+          height: 23px;
         }
-      }  
-
+      }
     }
 
-    input[type=submit]{
+    input[type='submit'] {
       outline: none;
       margin: 2vh;
       text-align: center;
@@ -250,16 +262,15 @@ button {
     }
 
     @media screen and (min-width: 400px) {
-      input[type=submit]{
-        height:40px;
+      input[type='submit'] {
+        height: 40px;
       }
     }
 
     @media screen and (max-width: 400px) {
-      input[type=submit]{
-        height:23px;
+      input[type='submit'] {
+        height: 23px;
       }
     }
-
   }
 }
