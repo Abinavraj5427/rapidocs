@@ -43,7 +43,7 @@ const TestForm = props => {
       </div>
       <div className='form-group'>
         <input
-          type='text'
+          type='file'
           placeholder='File Associated'
           name='file'
           value={file}
