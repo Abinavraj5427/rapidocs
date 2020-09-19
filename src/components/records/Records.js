@@ -10,7 +10,7 @@ import SpeedDial from '../layout/SpeedDial';
 const Records = () => {
   const [currentForm, setCurrentForm] = useState('Test');
 
-  const onChange = e => setCurrentForm(e.target.value);
+    const onChange = e => setCurrentForm(e.target.value);
 
   return (
     <div>
