@@ -115,3 +115,31 @@ img {
     margin: 0 1em;
   }
 }
+
+/* forms */
+
+.form-group {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='password'],
+.form input[type='number'],
+.form select,
+.form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4em;
+  font-size: 1.2em;
+  border: none;
+  font-family: inherit;
+}
+
+.form input[type='submit'],
+button {
+  font-family: inherit;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
