@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 // import { Image, Col, FormControl } from 'react-bootstrap';
-import InputGroup from 'react-bootstrap/InputGroup'
-import profile from '../../assets/Design2.PNG';
-
+import InputGroup from "react-bootstrap/InputGroup";
+import profile from "../../assets/Design2.PNG";
+import firebase from "firebase";
 
 const Profile = () => {
   return (
@@ -12,7 +12,23 @@ const Profile = () => {
                 <h1>Profile</h1>
             </div>
             <div className = "profile_sep">
-                <img src={profile} id='profile_img' alt='Profile'></img>
+                <img
+                src={firebase.auth().currentUser.photoURL}
+                id="profile_img"
+                alt="Profile"
+                >
+                </img>
+            </div>
+            <br/>
+            <div className="profile_sep">
+                <label>Name</label>
+                <input
+                    placeholder={
+                    firebase.auth().currentUser.displayName
+                        ? firebase.auth().currentUser.displayName
+                        : "Enter Name"
+                    }
+                ></input>
             </div>
             <br/>
             <div className = "profile_sep">
