@@ -20,10 +20,10 @@ const TestForm = props => {
         e.preventDefault();
         let user = firebase.auth().currentUser;
         if (user) {
-          const phoneNumber = user.phoneNumber;
+          const id = user.uid;
           firebase
             .database()
-            .ref('patients/' + phoneNumber)
+            .ref('patients/' + id)
             .set(formData);
         }
       }}
@@ -58,9 +58,10 @@ const TestForm = props => {
           name='file'
           value={file}
           onChange={onChange}
+          className='btn'
         />
       </div>
-      <input type='submit' />
+      <input type='submit' className='btn' />
     </form>
   );
 };
