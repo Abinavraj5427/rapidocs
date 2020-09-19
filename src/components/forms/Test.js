@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import firebase from 'firebase';
-import { useHistory } from 'react-router-dom'; 
+import { useHistory } from 'react-router-dom';
 
 const TestForm = props => {
   const [formData, setFormData] = useState({
@@ -20,43 +20,55 @@ const TestForm = props => {
       onSubmit={e => {
         e.preventDefault();
         let user = firebase.auth().currentUser;
-          if (user) {
-              const id = user.uid;
-              const inputField = document.getElementById('fileInputID'); 
-              let selectedFile = inputField.files[0];
-              let storageRef = firebase.storage().ref(id  + "/tests/" + selectedFile.name); 
-              const uploadTask = storageRef.put(selectedFile);
-              //update progress bar
-              uploadTask.on('state_changed', function (snapshot) {
-                  // Observe state change events such as progress, pause, and resume
-                  // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-                  var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                  console.log('Upload is ' + progress + '% done');
-                  switch (snapshot.state) {
-                      case firebase.storage.TaskState.PAUSED: // or 'paused'
-                          console.log('Upload is paused');
-                          break;
-                      case firebase.storage.TaskState.RUNNING: // or 'running'
-                          console.log('Upload is running');
-                          break;
-                  }
-              }, function (error) {
-                  // Handle unsuccessful uploads
-              }, function () {
-                  // Handle successful uploads on complete
-                  uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-                      const key = firebase
-                          .database()
-                          .ref()
-                          .child('patients/' + id + '/tests')
-                          .push().key;
-                      let updates = {};
-                      updates['patients/' + id + '/tests/' + key] = { title: formData.title, date: formData.date, fileName: downloadURL
-                          };
-                      firebase.database().ref().update(updates);
-                      window.location = 'http://localhost:3000/profile'; 
-                  });
-              });
+        if (user) {
+          const id = user.uid;
+          const inputField = document.getElementById('fileInputID');
+          let selectedFile = inputField.files[0];
+          let storageRef = firebase
+            .storage()
+            .ref(id + '/tests/' + selectedFile.name);
+          const uploadTask = storageRef.put(selectedFile);
+          //update progress bar
+          uploadTask.on(
+            'state_changed',
+            function (snapshot) {
+              // Observe state change events such as progress, pause, and resume
+              // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+              var progress =
+                (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              console.log('Upload is ' + progress + '% done');
+              switch (snapshot.state) {
+                case firebase.storage.TaskState.PAUSED: // or 'paused'
+                  console.log('Upload is paused');
+                  break;
+                case firebase.storage.TaskState.RUNNING: // or 'running'
+                  console.log('Upload is running');
+                  break;
+              }
+            },
+            function (error) {
+              // Handle unsuccessful uploads
+            },
+            function () {
+              // Handle successful uploads on complete
+              uploadTask.snapshot.ref
+                .getDownloadURL()
+                .then(function (downloadURL) {
+                  const key = firebase
+                    .database()
+                    .ref()
+                    .child('patients/' + id + '/tests')
+                    .push().key;
+                  let updates = {};
+                  updates['patients/' + id + '/tests/' + key] = {
+                    title: formData.title,
+                    date: formData.date,
+                    fileName: downloadURL,
+                  };
+                  firebase.database().ref().update(updates);
+                });
+            }
+          );
         }
       }}
     >
@@ -94,7 +106,9 @@ const TestForm = props => {
           className='btn'
         />
       </div>
-      <input type='submit' className='btn' />
+      <button type='submit' className='btn'>
+        Add This Test
+      </button>
     </form>
   );
 };
