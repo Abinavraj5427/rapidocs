@@ -11,19 +11,6 @@ import MyDoctor from "./components/forms/MyDoctor";
 import Procedure from "./components/forms/Procedure";
 
 const App = () => {
-  // useEffect(() => {
-  //   // db.ref("patients")
-  //   //   .once("value")
-  //   //   .then(function (snapshot) {
-  //   //     console.log(snapshot.val());
-  //   //   });
-
-  //   db.ref("patients/asing@mail.com").set({
-  //     name: "Aman Singh",
-  //     email: "asing@mail.com",
-  //   });
-  // }, []);
-
   const [isSignedIn, setIsSignedIn] = useState(false);
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -42,6 +29,7 @@ const App = () => {
     <Router>
       <Fragment>
         <Navbar />
+
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/profile" component={Profile} />
