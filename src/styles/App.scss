@@ -151,10 +151,12 @@ button {
   justify-content: center;
   padding-top: 5%;
   height: 100%;
+  width: 100%;
   text-align: center;
 
   #profile_col{
-
+    width:50%;
+    
     .profile_sep{
       margin-top: 10px;
       margin-bottom: 10px;
@@ -174,9 +176,9 @@ button {
         border-radius: 20px;
         border-style: none;
         border: none;
-        background-color: #a239ca;
+        background-color: $light-color;
         font-size: 20px;
-        color: white;
+        color: $dark-color;
         
       }
 

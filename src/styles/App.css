@@ -162,7 +162,12 @@ button {
           justify-content: center;
   padding-top: 5%;
   height: 100%;
+  width: 100%;
   text-align: center;
+}
+
+#profile #profile_col {
+  width: 50%;
 }
 
 #profile #profile_col .profile_sep {
@@ -185,8 +190,8 @@ button {
   border-radius: 20px;
   border-style: none;
   border: none;
-  background-color: #a239ca;
+  background-color: #e7dfdd;
   font-size: 20px;
-  color: white;
+  color: #0e0b16;
 }
 /*# sourceMappingURL=App.css.map */

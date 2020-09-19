@@ -16,13 +16,12 @@ const Profile = () => {
             </div>
             <br/>
             <div className = "profile_sep">
-                <label>Phone</label>
-                <input placeholder = "999-999-999"></input>
+                <input placeholder = "phone number"></input>
             </div>
             <br/>
             <div className = "profile_sep">
                 <label>Date of Birth</label>
-                <input placeholder = "999-999-999"></input>
+                <input type="date"></input>
             </div>
             
             <br/>
