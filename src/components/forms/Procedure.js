@@ -1,6 +1,5 @@
 import React, { useState, Fragment } from 'react';
 import firebase from 'firebase';
-import { render } from '@testing-library/react';
 
 const Procedure = () => {
   const [formData, setFormData] = useState({
