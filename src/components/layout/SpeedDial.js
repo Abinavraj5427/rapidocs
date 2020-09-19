@@ -48,13 +48,12 @@ export default function SpeedDialTooltipOpen() {
 
     const style = {
         zIndex: 100,
-    }
+        }
 
     return (
         <div className={classes.root}>
             <Backdrop style={style} open={open} />
             <SpeedDial
-                
                 ariaLabel="SpeedDial tooltip example"
                 className={classes.speedDial}
                 hidden={hidden}
