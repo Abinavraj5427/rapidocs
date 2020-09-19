@@ -128,6 +128,8 @@ img {
 .form input[type='email'],
 .form input[type='password'],
 .form input[type='number'],
+.form input[type='date'],
+.form input[type='file'],
 .form select,
 .form textarea {
   display: block;
@@ -182,7 +184,8 @@ button {
         }
       }
 
-      input[type=number], input[type=text], input[type=number]:focus, input[type=text]:focus{
+      input,
+      input:focus {
         text-align: center;
         width: 100%;
         height: 40px;
@@ -211,5 +214,4 @@ button {
       color: $dark-color;
     }
   }
-  
 }

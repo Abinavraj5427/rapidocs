@@ -132,6 +132,8 @@ img {
 .form input[type='email'],
 .form input[type='password'],
 .form input[type='number'],
+.form input[type='date'],
+.form input[type='file'],
 .form select,
 .form textarea {
   display: block;
@@ -199,7 +201,8 @@ button {
   margin: 10px;
 }
 
-#profile #profile_col .profile_sep input[type=number], #profile #profile_col .profile_sep input[type=text], #profile #profile_col .profile_sep input[type=number]:focus, #profile #profile_col .profile_sep input[type=text]:focus {
+#profile #profile_col .profile_sep input,
+#profile #profile_col .profile_sep input:focus {
   text-align: center;
   width: 100%;
   height: 40px;
