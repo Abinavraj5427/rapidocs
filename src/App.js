@@ -8,6 +8,7 @@ import Profile from "./components/profile/Profile";
 import firebase from "firebase";
 import db from "./firebase";
 import MyDoctor from "./components/forms/MyDoctor";
+import Procedure from "./components/forms/Procedure";
 
 const App = () => {
   // useEffect(() => {
@@ -45,6 +46,7 @@ const App = () => {
           <Route exact path="/" component={Landing} />
           <Route path="/profile" component={Profile} />
           <Route path="/docs" component={MyDoctor} />
+          <Route path="/procedures" component={Procedure} />
           <Route component={Routes} />
         </Switch>
       </Fragment>
