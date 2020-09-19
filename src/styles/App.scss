@@ -22,7 +22,7 @@ body {
 }
 
 a {
-  color: $primary-color;
+  color: $accent-color;
   text-decoration: none;
 }
 
@@ -102,7 +102,7 @@ img {
   z-index: 10;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px $primary-color;
+  border-bottom: solid 1px $accent-color;
   background-color: rgba(0, 0, 0, 0.9);
 
   ul {
@@ -144,19 +144,21 @@ button {
   margin-bottom: 1em;
 }
 
-
-#profile{
+#profile {
   display: flex;
   flex-direction: row;
   justify-content: center;
 
+<<<<<<< HEAD
+  #profile_img {
+=======
   #profile_img{
     margin-top: 10%;
+>>>>>>> e9caa432f78a4b1016fe6410cf4855bd5e792540
     border-radius: 50%;
     border-color: 10px;
     border-style: solid;
     width: 200px;
     height: 200px;
   }
-
 }
