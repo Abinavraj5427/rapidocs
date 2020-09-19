@@ -1,5 +1,11 @@
-import React, { Fragment, useEffect, useState, useContext } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { Fragment, useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./styles/App.css";
 import Routes from "./components/routing/Routes";
 import Landing from "./components/layout/Landing";
@@ -7,7 +13,6 @@ import Navbar from "./components/layout/Navbar";
 import firebase from "firebase";
 import MenuProvider from "react-flexible-sliding-menu";
 import Menu from "./components/layout/Menu";
-
 
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -30,7 +35,9 @@ const App = () => {
         <MenuProvider MenuComponent={Menu} animation="push">
           <Navbar />
           <Switch>
-            <Route exact path="/" componenEt={Landing} />
+            <Route exact path="/" component={Landing}>
+              {isSignedIn && <Redirect to="/records" />}
+            </Route>
             <Route component={Routes} />
           </Switch>
         </MenuProvider>

@@ -35,7 +35,6 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      {landAt == "/records" && history.push("/records")}
       <AppBar position="static" color="transparent">
         <Toolbar>
           {landAt == "/records" && (
