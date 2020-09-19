@@ -1,14 +1,16 @@
-import React, { Profiler } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import Records from '../records/Records';
-import Profile from '../profile/Profile';
+import React, { Profiler } from "react";
+import { Route, Switch } from "react-router-dom";
+import Records from "../records/Records";
+import Profile from "../profile/Profile";
+import VerifyPhone from "../profile/VerifyPhone";
 
 const Routes = () => {
   return (
-    <section className='container'>
+    <section className="container">
       <Switch>
-        <Route exact path='/records' component={Records} />
-        <Route exact path='/profile' component={Profile} />
+        <Route exact path="/records" component={Records} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/verifyphone" component={VerifyPhone} />
       </Switch>
     </section>
   );
