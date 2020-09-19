@@ -3,8 +3,10 @@ import firebase from 'firebase';
 import { render } from '@testing-library/react';
 
 const MyDoctor = () => {
-    const[curName, setCurName] = useState(undefined);
-    const[curNumber, setCurNumber] = useState(undefined);
+    const[title, setTitle] = useState(undefined);
+    const[procedurePerformed, setProcedurePerformed] = useState(undefined);
+    const[date, setDate] = useState(undefined);
+    const[type, setType] = useState(undefined);
 
     return (
         <form
@@ -31,13 +33,13 @@ const MyDoctor = () => {
                       
                         <h1>Procedure</h1>
                         <label>Procedure Title</label>
-                        <input type = "text" value = {curName} onChange = {e => setCurName(e.target.value)}></input>
+                        <input type = "text" value = {title} onChange = {e => setTitle(e.target.value)}></input>
                         <label>Procedure Performed</label>
-                        <input type = "text" value = {curNumber} onChange = {e => setCurNumber(e.target.value)}></input>
+                        <input type = "text" value = {procedurePerformed} onChange = {e => setProcedurePerformed(e.target.value)}></input>
                         <label>Date Performed</label>
-                        <input type = "date" value = {curName} onChange = {e => setCurName(e.target.value)}></input>
+                        <input type = "date" value = {date} onChange = {e => setDate(e.target.value)}></input>
                         <label>Type</label>
-                        <input type = "text" value = {curNumber} onChange = {e => setCurNumber(e.target.value)}></input>
+                        <input type = "text" value = {type} onChange = {e => setType(e.target.value)}></input>
                         <input type = "submit" value = "Add Procedure" onClick = {() => {
                             
                         }}></input>

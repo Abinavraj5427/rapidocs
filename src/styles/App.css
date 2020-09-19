@@ -2,13 +2,13 @@
 /* defaults */
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Futura', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   background-color: #0e0b16;
   color: #e7dfdd;
@@ -19,7 +19,8 @@ body #root {
   height: 100%;
 }
 
-body input, body input:focus {
+body input,
+body input:focus {
   text-align: center;
   width: 100%;
   border-radius: 5px;
@@ -32,18 +33,20 @@ body input, body input:focus {
 }
 
 @media screen and (min-width: 400px) {
-  body input, body input:focus {
+  body input,
+  body input:focus {
     height: 40px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  body input, body input:focus {
+  body input,
+  body input:focus {
     height: 23px;
   }
 }
 
-body input[type=submit] {
+body input[type="submit"] {
   outline: none;
   margin: 2vh;
   text-align: center;
@@ -57,13 +60,13 @@ body input[type=submit] {
 }
 
 @media screen and (min-width: 400px) {
-  body input[type=submit] {
+  body input[type="submit"] {
     height: 40px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  body input[type=submit] {
+  body input[type="submit"] {
     height: 23px;
   }
 }
@@ -143,14 +146,14 @@ img {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -159,11 +162,11 @@ img {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding-left: 2em;
   padding-right: 2em;
   padding-top: 0.5em;
@@ -194,12 +197,12 @@ img {
   margin-bottom: 1.5em;
 }
 
-.form input[type='text'],
-.form input[type='email'],
-.form input[type='password'],
-.form input[type='number'],
-.form input[type='date'],
-.form input[type='file'],
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="number"],
+.form input[type="date"],
+.form input[type="file"],
 .form select,
 .form textarea {
   display: block;
@@ -210,7 +213,7 @@ img {
   font-family: inherit;
 }
 
-.form input[type='submit'],
+.form input[type="submit"],
 button {
   font-family: inherit;
   margin-top: 1em;
@@ -223,14 +226,15 @@ button {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
   text-align: center;
+  padding-top: 50px;
 }
 
 #profile #profile_col {
@@ -266,11 +270,11 @@ button {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
 }
 
 #profile #profile_col .profile_sep .input_rows input {
@@ -287,11 +291,11 @@ button {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 #doctor_form .center {
@@ -315,12 +319,16 @@ button {
   background-color: #e7dfdd;
   margin: 5vh;
   padding: 7vh;
-  border-radius: 2vh;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  border-radius: 1vh;
+  -webkit-box-shadow: 20px 20px 50px #a139ca86;
+          box-shadow: 20px 20px 50px #a139ca86;
 }
 
 #doctor_form .center .tile h1 {
   color: black;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
 }
 
 #doctor_form .center .tile h2 {
@@ -332,26 +340,28 @@ button {
   color: black;
 }
 
-#doctor_form .center .tile input[type=text], #doctor_form .center .tile input[type=date] {
+#doctor_form .center .tile input[type="text"],
+#doctor_form .center .tile input[type="date"] {
   margin-bottom: 4vh;
+  margin-top: 1vh;
   border-style: solid;
   border-width: 2px;
   border-color: gray;
 }
 
-#doctor_form .center .tile input[type=submit] {
+#doctor_form .center .tile input[type="submit"] {
   background-color: #a239ca;
   color: white;
 }
 
 @media screen and (min-width: 400px) {
-  #doctor_form .center .tile input[type=submit] {
+  #doctor_form .center .tile input[type="submit"] {
     width: 70%;
   }
 }
 
 @media screen and (max-width: 400px) {
-  #doctor_form .center .tile input[type=submit] {
+  #doctor_form .center .tile input[type="submit"] {
     width: 90%;
   }
 }

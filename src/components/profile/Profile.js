@@ -67,6 +67,9 @@ const Profile = () => {
   const handleChange = (event) => {
     setData({ ...data, [event.target.name]: event.target.value });
   };
+
+  const logout = () => {};
+
   return (
     <div>
       {/* <VerifyPhone open={open} newPhoneNum={phone} /> */}
@@ -253,6 +256,17 @@ const Profile = () => {
           <input type="submit" value="Save"></input>
         </div>
       </form>
+      {/* <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <button onClick={logout} style={{ alignSelf: "center" }}>
+          Logout
+        </button>
+      </div> */}
     </div>
   );
 };

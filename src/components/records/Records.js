@@ -5,6 +5,7 @@ import Medication from '../forms/Medication';
 import Allergy from '../forms/Allergy';
 import Diagnosis from '../forms/Diagnosis';
 import Appointment from '../forms/Appointment';
+import SpeedDial from '../layout/SpeedDial'; 
 
 const Records = () => {
   const [currentForm, setCurrentForm] = useState('Test');
@@ -28,6 +29,7 @@ const Records = () => {
       {currentForm == 'Allergy' && <Allergy />}
       {currentForm == 'Diagnosis' && <Diagnosis />}
       {currentForm == 'Appointment' && <Appointment />}
+      <SpeedDial />
     </div>
   );
 };
