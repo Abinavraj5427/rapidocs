@@ -43,13 +43,16 @@ const Profile = () => {
             <br/>
             <div className = "profile_sep">
                 <label>Pharmacy</label>
-                <input placeholder = "999-999-999"></input>
+                <input placeholder = "Address"></input>
+                <input placeholder = "City"></input>
+                <input placeholder = "State"></input>
+                <input type = "number" placeholder = "PIN"></input>
             </div>
             
             <br/>
             <div className = "profile_sep">
                 <label>Insurance</label>
-                <input placeholder = "999-999-999"></input>
+                <input placeholder = "ex. Blue Cross Blue Shield"></input>
             </div>
         </div>
     </div>
