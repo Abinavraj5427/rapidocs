@@ -7,8 +7,36 @@ import profile from '../../assets/Design2.PNG';
 const Profile = () => {
   return (
     <div id='profile'>
-      <h1>Profile</h1>
-      <img src={profile} id='profile_img' alt='Profile Image'></img>
+        <div id = "profile_col">
+            <div className = "profile_sep">
+                <h1>Profile</h1>
+            </div>
+            <div className = "profile_sep">
+                <img src={profile} id='profile_img' alt='Profile'></img>
+            </div>
+            <br/>
+            <div className = "profile_sep">
+                <label>Phone</label>
+                <input placeholder = "999-999-999"></input>
+            </div>
+            <br/>
+            <div className = "profile_sep">
+                <label>Date of Birth</label>
+                <input placeholder = "999-999-999"></input>
+            </div>
+            
+            <br/>
+            <div className = "profile_sep">
+                <label>Pharmacy</label>
+                <input placeholder = "999-999-999"></input>
+            </div>
+            
+            <br/>
+            <div className = "profile_sep">
+                <label>Insurance</label>
+                <input placeholder = "999-999-999"></input>
+            </div>
+        </div>
     </div>
   );
 };
