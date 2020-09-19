@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import firebase from 'firebase';
+import { useHistory } from 'react-router-dom'; 
 
 const TestForm = props => {
   const [formData, setFormData] = useState({
@@ -28,7 +29,8 @@ const TestForm = props => {
             .push().key;
           let updates = {};
           updates['patients/' + id + '/tests/' + key] = { ...formData };
-          firebase.database().ref().update(updates);
+            firebase.database().ref().update(updates);
+            window.location = 'http://localhost:3000/profile'; 
         }
       }}
     >
