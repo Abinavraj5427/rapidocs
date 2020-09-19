@@ -30,6 +30,8 @@ const Profile = () => {
             value={
               !!firebase.auth().currentUser &&
               firebase.auth().currentUser.displayName
+                ? firebase.auth().currentUser.displayName
+                : undefined
             }
           ></input>
         </div>
