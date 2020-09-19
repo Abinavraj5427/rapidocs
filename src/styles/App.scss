@@ -16,7 +16,7 @@ $mobile-breakpoint: 738px;
 
 body {
   // overflow: auto;
-  font-family: "Futura", sans-serif;
+  font-family: 'Futura', sans-serif;
   font-size: 1rem;
   background-color: $dark-color;
   color: $light-color;
@@ -223,12 +223,12 @@ img {
   margin-bottom: 1.5em;
 }
 
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="password"],
-.form input[type="number"],
-.form input[type="date"],
-.form input[type="file"],
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='password'],
+.form input[type='number'],
+.form input[type='date'],
+.form input[type='file'],
 .form select,
 .form textarea {
   display: block;
@@ -239,7 +239,7 @@ img {
   font-family: inherit;
 }
 
-.form input[type="submit"],
+.form input[type='submit'],
 button {
   font-family: inherit;
   margin-top: 1em;
@@ -355,60 +355,60 @@ button {
         color: white;
 
         @media screen and (min-width: 400px) {
-            width: 50%;
+          width: 50%;
         }
 
         @media screen and (max-width: 400px) {
-            width: 95%;
-            font-size: 2.5vh;
+          width: 95%;
+          font-size: 2.5vh;
         }
 
         .tile {
-            background-color: $light-color;
-            margin: 5vh;
-            padding: 7vh;
-            padding-top: 4vh;
-            padding-bottom: 4vh;
-            border-radius: 1vh;
-            box-shadow: 20px 20px 50px #a139ca86;
+          background-color: $light-color;
+          margin: 5vh;
+          padding: 7vh;
+          padding-top: 4vh;
+          padding-bottom: 4vh;
+          border-radius: 1vh;
+          box-shadow: 20px 20px 50px #a139ca86;
 
-            h1 {
-                color: black;
-                margin-bottom: 4vh;
+          h1 {
+            color: black;
+            margin-bottom: 4vh;
+          }
+
+          h2 {
+            color: black;
+            margin-bottom: 2vh;
+          }
+
+          label {
+            color: black;
+          }
+
+          input[type='text'],
+          input[type='date'] {
+            margin-bottom: 4vh;
+            margin-top: 1vh;
+            border-style: solid;
+            border-width: 2px;
+            border-color: gray;
+          }
+
+          input[type='submit'] {
+            background-color: $accent-color;
+            color: white;
+
+            @media screen and (min-width: 400px) {
+              width: 70%;
             }
 
-            h2 {
-                color: black;
-                margin-bottom: 2vh;
+            @media screen and (max-width: 400px) {
+              width: 90%;
             }
-
-            label {
-                color: black;
-            }
-
-            input[type='text'],
-            input[type='date'] {
-                margin-bottom: 4vh;
-                margin-top: 1vh;
-                border-style: solid;
-                border-width: 2px;
-                border-color: gray;
-            }
-
-            input[type='submit'] {
-                background-color: $accent-color;
-                color: white;
-
-                @media screen and (min-width: 400px) {
-                    width: 70%;
-                }
-
-                @media screen and (max-width: 400px) {
-                    width: 90%;
-                }
-            }
+          }
         }
+      }
     }
-    
+  }
 }
-
