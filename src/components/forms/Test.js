@@ -20,17 +20,41 @@ const TestForm = props => {
       onSubmit={e => {
         e.preventDefault();
         let user = firebase.auth().currentUser;
-        if (user) {
-          const id = user.uid;
-          const key = firebase
-            .database()
-            .ref()
-            .child('patients/' + id + '/tests')
-            .push().key;
-          let updates = {};
-          updates['patients/' + id + '/tests/' + key] = { ...formData };
-            firebase.database().ref().update(updates);
-            window.location = 'http://localhost:3000/profile'; 
+          if (user) {
+              const id = user.uid;
+              const inputField = document.getElementById('fileInputID'); 
+              let selectedFile = inputField.files[0];
+              let storageRef = firebase.storage().ref(id  + "/tests/" + selectedFile.name); 
+              var upload = storageRef.put(selectedFile);
+              //update progress bar
+              upload.on(
+                  "state_changed",
+                  function progress(snapshot) {
+                      var percentage =
+                          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                      //spinner can go here
+                  },
+
+                  function error() {
+                      alert("error uploading file");
+                  },
+
+                  function complete() {
+                      //remove spinner
+                      alert("File is uploaded"); 
+                  }
+              );
+              storageRef.getDownloadURL().then(function (url) {
+                  const key = firebase
+                      .database()
+                      .ref()
+                      .child('patients/' + id + '/tests')
+                      .push().key;
+                  let updates = {};
+                  updates['patients/' + id + '/tests/' + key] = { title: formData.title, date: formData.date, fileName: url };
+                  firebase.database().ref().update(updates);
+                  window.location = 'http://localhost:3000/profile'; 
+              }); 
         }
       }}
     >
@@ -60,6 +84,7 @@ const TestForm = props => {
         <label className='S'>Test Results File</label>
         <input
           type='file'
+          id='fileInputID'
           placeholder='File Associated'
           name='file'
           value={file}
