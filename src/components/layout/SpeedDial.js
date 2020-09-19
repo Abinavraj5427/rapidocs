@@ -51,6 +51,7 @@ export default function SpeedDialTooltipOpen() {
         <div className={classes.root}>
             <Backdrop open={open} />
             <SpeedDial
+                
                 ariaLabel="SpeedDial tooltip example"
                 className={classes.speedDial}
                 hidden={hidden}

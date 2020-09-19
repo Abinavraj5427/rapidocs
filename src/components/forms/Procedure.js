@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react';
 import firebase from 'firebase';
 import { render } from '@testing-library/react';
 
-const MyDoctor = () => {
+const Procedure = () => {
   const [formData, setFormData] = useState({
     title: '',
     date: '',
@@ -49,7 +49,7 @@ const MyDoctor = () => {
   return (
     <Fragment>
       {submitted && <p className='saved S'>Procedure Saved</p>}
-      <form className='form' id='doctor_form' onSubmit={onSubmit}>
+      <form className='form' onSubmit={onSubmit}>
         <div className='center'>
           <div className='verticalAlign'>
             <div className='tile'>
@@ -83,4 +83,4 @@ const MyDoctor = () => {
   );
 };
 
-export default MyDoctor;
+export default Procedure;

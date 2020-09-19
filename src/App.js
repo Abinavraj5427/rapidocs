@@ -32,9 +32,6 @@ const App = () => {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/docs" component={MyDoctor} />
-          <Route path="/procedures" component={Procedure} />
           <Route component={Routes} />
         </Switch>
       </Fragment>
