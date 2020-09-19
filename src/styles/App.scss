@@ -16,7 +16,7 @@ $mobile-breakpoint: 738px;
 
 body {
   // overflow: auto;
-  font-family: 'Futura', sans-serif;
+  font-family: "Futura", sans-serif;
   font-size: 1rem;
   background-color: $dark-color;
   color: $light-color;
@@ -27,7 +27,8 @@ body {
     height: 100%;
   }
 
-  input,input:focus {
+  input,
+  input:focus {
     text-align: center;
     width: 100%;
     border-radius: 5px;
@@ -40,18 +41,20 @@ body {
   }
 
   @media screen and (min-width: 400px) {
-    input, input:focus{
-      height:40px;
-    }
-  }  
-
-  @media screen and (max-width: 400px) {
-    input,input:focus {
-      height:23px;
+    input,
+    input:focus {
+      height: 40px;
     }
   }
 
-  input[type=submit]{
+  @media screen and (max-width: 400px) {
+    input,
+    input:focus {
+      height: 23px;
+    }
+  }
+
+  input[type="submit"] {
     outline: none;
     margin: 2vh;
     text-align: center;
@@ -65,19 +68,17 @@ body {
   }
 
   @media screen and (min-width: 400px) {
-    input[type=submit]{
-      height:40px;
+    input[type="submit"] {
+      height: 40px;
     }
   }
 
   @media screen and (max-width: 400px) {
-    input[type=submit]{
-      height:23px;
+    input[type="submit"] {
+      height: 23px;
     }
   }
 }
-
-
 
 a {
   color: $accent-color;
@@ -186,6 +187,34 @@ img {
     margin: 0 1em;
   }
 }
+/* menu */
+
+.Menu {
+  padding: 1rem;
+  position: relative;
+  background: #282828;
+  color: $light-color;
+  height: 100%;
+  padding-top: 20px;
+  text-align: center;
+
+  .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .links {
+    font-size: 0.8em;
+    padding-top: 30px;
+
+    p {
+      font-weight: bold;
+      padding: 10px;
+    }
+  }
+}
 
 /* forms */
 
@@ -194,12 +223,12 @@ img {
   margin-bottom: 1.5em;
 }
 
-.form input[type='text'],
-.form input[type='email'],
-.form input[type='password'],
-.form input[type='number'],
-.form input[type='date'],
-.form input[type='file'],
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="number"],
+.form input[type="date"],
+.form input[type="file"],
 .form select,
 .form textarea {
   display: block;
@@ -210,7 +239,7 @@ img {
   font-family: inherit;
 }
 
-.form input[type='submit'],
+.form input[type="submit"],
 button {
   font-family: inherit;
   margin-top: 1em;
@@ -257,74 +286,70 @@ button {
           margin: 10px;
         }
       }
-
     }
-
   }
 }
 
-#doctor_form{
+#doctor_form {
   padding-top: 8vh;
   text-align: center;
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 
-  .center{
-    height:100%;
-    
+  .center {
+    height: 100%;
+
     @media screen and (min-width: 400px) {
-      width:50%;
+      width: 50%;
     }
 
     @media screen and (max-width: 400px) {
-      width:95%;
+      width: 95%;
       font-size: 2.5vh;
     }
 
-    .tile{
+    .tile {
       background-color: $light-color;
-      margin:5vh;
+      margin: 5vh;
       padding: 7vh;
       border-radius: 2vh;
 
-      h1{
-        color:black;
-        margin-bottom:2vh;
-      }
-
-      h2{
-        color:black;
+      h1 {
+        color: black;
         margin-bottom: 2vh;
       }
 
-      label{
-        color:black;
+      h2 {
+        color: black;
+        margin-bottom: 2vh;
       }
-      input[type=text], input[type=date]{
+
+      label {
+        color: black;
+      }
+      input[type="text"],
+      input[type="date"] {
         margin-bottom: 4vh;
         border-style: solid;
-        border-width:2px;
+        border-width: 2px;
         border-color: gray;
       }
 
-      input[type=submit]{
-        background-color:$accent-color;
-        color:white;
+      input[type="submit"] {
+        background-color: $accent-color;
+        color: white;
 
         @media screen and (min-width: 400px) {
-          width:70%;
+          width: 70%;
         }
-    
-        @media screen and (max-width: 400px) {
-          width:90%;
-        }
-    
-      }
 
-      
+        @media screen and (max-width: 400px) {
+          width: 90%;
+        }
+      }
     }
   }
 }
