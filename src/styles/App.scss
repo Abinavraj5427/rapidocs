@@ -18,27 +18,66 @@ body {
   // overflow: auto;
   font-family: 'Futura', sans-serif;
   font-size: 1rem;
-  // background-color: $dark-color;
+  background-color: $dark-color;
   color: $light-color;
   height: 100%;
-  animation: pulse 5s infinite;
+  // animation: pulse 5s infinite;
 
   #root {
     height: 100%;
   }
+
+  input,input:focus {
+    text-align: center;
+    width: 100%;
+    border-radius: 20px;
+    border-style: none;
+    border: none;
+    background-color: $light-color;
+    font-size: 20px;
+    color: $dark-color;
+    outline: none;
+  }
+
+  @media screen and (min-width: 400px) {
+    input, input:focus{
+      height:40px;
+    }
+  }  
+
+  @media screen and (max-width: 400px) {
+    input,input:focus {
+      height:23px;
+    }
+  }
+
+  input[type=submit]{
+    outline: none;
+    margin: 2vh;
+    text-align: center;
+    width: 30%;
+    border-radius: 20px;
+    border-style: none;
+    border: none;
+    background-color: $accent-color;
+    font-size: 20px;
+    color: $dark-color;
+  }
+
+  @media screen and (min-width: 400px) {
+    input[type=submit]{
+      height:40px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    input[type=submit]{
+      height:23px;
+    }
+  }
 }
 
-@keyframes pulse {
-  0% {
-    background-color: $dark-color;
-  }
-  50% {
-    background-color: $primary-color;
-  }
-  100% {
-    background-color: $dark-color;
-  }
-}
+
 
 a {
   color: $accent-color;
@@ -182,7 +221,6 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 8vh;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -220,57 +258,67 @@ button {
         }
       }
 
-      input,
-      input:focus {
-        text-align: center;
-        width: 100%;
-        border-radius: 20px;
-        border-style: none;
-        border: none;
-        background-color: $light-color;
-        font-size: 20px;
-        color: $dark-color;
-        outline: none;
-      }
-
-      @media screen and (min-width: 400px) {
-        input,
-        input:focus {
-          height: 40px;
-        }
-      }
-
-      @media screen and (max-width: 400px) {
-        input,
-        input:focus {
-          height: 23px;
-        }
-      }
     }
 
-    input[type='submit'] {
-      outline: none;
-      margin: 2vh;
-      text-align: center;
-      width: 30%;
-      border-radius: 20px;
-      border-style: none;
-      border: none;
-      background-color: $accent-color;
-      font-size: 20px;
-      color: $dark-color;
-    }
+  }
+}
 
+.form{
+  padding-top: 8vh;
+  text-align: center;
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .center{
+    height:100%;
+    
     @media screen and (min-width: 400px) {
-      input[type='submit'] {
-        height: 40px;
-      }
+      width:50%;
     }
 
     @media screen and (max-width: 400px) {
-      input[type='submit'] {
-        height: 23px;
+      width:95%;
+      font-size: 2.5vh;
+    }
+
+    .doctor_tile{
+      background-color: $light-color;
+      margin:5vh;
+      padding: 5vh;
+      border-radius: 2vh;
+
+      h2{
+        color:black;
+        margin-bottom: 2vh;
       }
+
+      label{
+        color:black;
+      }
+      input[type=text]{
+        margin-bottom: 4vh;
+        border-style: solid;
+        border-width:2px;
+        border-color: $primary-color;
+      }
+
+      input[type=submit]{
+        background-color:$accent-color;
+
+        @media screen and (min-width: 400px) {
+          width:70%;
+        }
+    
+        @media screen and (max-width: 400px) {
+          width:90%;
+        }
+    
+      }
+
+      
     }
   }
 }
