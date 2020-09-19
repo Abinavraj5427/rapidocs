@@ -16,6 +16,10 @@ body {
           animation: pulse 5s infinite;
 }
 
+body #root {
+  height: 100%;
+}
+
 @-webkit-keyframes pulse {
   0% {
     background-color: #0e0b16;
@@ -193,6 +197,10 @@ button {
   text-align: center;
 }
 
+#profile #profile_col {
+  height: 100%;
+}
+
 @media screen and (min-width: 400px) {
   #profile #profile_col {
     width: 40%;
@@ -272,13 +280,13 @@ button {
 }
 
 @media screen and (min-width: 400px) {
-  #profile #profile_col {
+  #profile #profile_col input[type=submit] {
     height: 40px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  #profile #profile_col {
+  #profile #profile_col input[type=submit] {
     height: 23px;
   }
 }

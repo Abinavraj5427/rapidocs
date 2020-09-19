@@ -15,12 +15,17 @@ $mobile-breakpoint: 738px;
 }
 
 body {
+  // overflow: auto;
   font-family: 'Futura', sans-serif;
   font-size: 1rem;
   // background-color: $dark-color;
   color: $light-color;
   height: 100%;
   animation: pulse 5s infinite;
+
+  #root{
+    height: 100%;
+  }
 }
 
 @keyframes pulse {
@@ -172,6 +177,8 @@ button {
   
 
   #profile_col{
+    // background-color: white;
+    height: 100%;
     
     @media screen and (min-width: 400px) {
       width:40%;
@@ -243,11 +250,15 @@ button {
     }
 
     @media screen and (min-width: 400px) {
-      height: 40px;
+      input[type=submit]{
+        height:40px;
+      }
     }
 
     @media screen and (max-width: 400px) {
-      height: 23px;
+      input[type=submit]{
+        height:23px;
+      }
     }
 
   }

@@ -57,7 +57,7 @@ const Profile = () => {
 
         <br />
         <div className="profile_sep">
-            <label>Pharmacy</label>
+            <label>Address</label>
             <input type = "text" placeholder="Address"></input> 
             <br/>
             <div className = "input_rows">
@@ -66,6 +66,23 @@ const Profile = () => {
                 <input type="number" placeholder="Zip"></input>
             </div>
             
+        </div>
+
+        <br />
+
+        <div className="profile_sep">
+            <label>Pharmacy</label>
+            <input type = "text" placeholder="Address"></input> 
+            <br/>
+            <div className = "input_rows">
+                <input type = "text" placeholder="City"></input>
+                <input type = "text" placeholder="State"></input>
+                <input type="number" placeholder="Zip"></input>
+            </div>
+            <div className = "input_rows">
+                <input type = "text" placeholder="Pharmacy Name"></input>
+                <input type="number" placeholder="Pharmacy Phone"></input>
+            </div>
         </div>
 
         <br />
