@@ -1,35 +1,89 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import firebase from 'firebase';
 
 const Allergy = () => {
   const [formData, setFormData] = useState({
-    title: '',
+    name: '',
     date: '',
-    file: '',
+    severity: 0,
+    type: '',
   });
 
-  const { title, date, file } = formData;
+  const [submitted, setSubmitted] = useState(false);
+
+  const { name, date, severity, type } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const onSubmit = e => {
+    e.preventDefault();
+    let user = firebase.auth().currentUser;
+    if (user) {
+      const id = user.uid;
+      const key = firebase
+        .database()
+        .ref()
+        .child('patients/' + id + '/allergies')
+        .push().key;
+      let updates = {};
+      updates['patients/' + id + '/allergies/' + key] = {
+        ...formData,
+      };
+      firebase.database().ref().update(updates);
+    }
+
+    // clear form
+    setFormData({
+      name: '',
+      date: '',
+      severity: 0,
+      type: '',
+    });
+
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 5000);
+  };
+
   return (
-    <form
-      className='form'
-      onSubmit={e => {
-        e.preventDefault();
-        let user = firebase.auth().currentUser;
-        if (user) {
-          const id = user.uid;
-          firebase
-            .database()
-            .ref('patients/' + id)
-            .set(formData);
-        }
-      }}
-    >
-      <div>Allergy</div>
-    </form>
+    <Fragment>
+      {submitted && <p className='saved S'>Procedure Saved</p>}
+      <form className='form' onSubmit={onSubmit}>
+        <div className='center'>
+          <div className='verticalAlign'>
+            <div className='tile'>
+              <h1>Allergy</h1>
+              <label>Allergy Name</label>
+              <input type='text' name='name' value={name} onChange={onChange} />
+              <label>Date Discovered</label>
+              <input type='date' name='date' value={date} onChange={onChange} />
+              <label>Severity</label>
+              <select name='severity' value={severity} onChange={onChange}>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+                <option value={6}>6</option>
+                <option value={7}>7</option>
+                <option value={8}>8</option>
+                <option value={9}>9</option>
+                <option value={10}>10</option>
+              </select>
+              <label>Type</label>
+              <select name='type' value={type} onChange={onChange}>
+                <option value='contact'>contact</option>
+                <option value='inhalation'>inhalation</option>
+                <option value='ingestion'>ingestion</option>
+              </select>
+              <button type='submit' className='btn'>
+                Add Allergy
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </Fragment>
   );
 };
 
