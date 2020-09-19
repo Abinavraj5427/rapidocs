@@ -160,27 +160,43 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 5%;
+  padding-top: 8vh;
   height: 100%;
   width: 100%;
   text-align: center;
 }
 
 #profile #profile_col {
-  width: 50%;
+  width: 40%;
 }
 
 #profile #profile_col .profile_sep {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 1vh;
 }
 
 #profile #profile_col .profile_sep #profile_img {
   border-radius: 50%;
   border-color: 10px;
   border-style: solid;
-  width: 200px;
-  height: 200px;
+  width: 15vh;
+  height: 15vh;
+}
+
+#profile #profile_col .profile_sep .input_rows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#profile #profile_col .profile_sep .input_rows input {
+  margin: 10px;
 }
 
 #profile #profile_col .profile_sep input[type=number], #profile #profile_col .profile_sep input[type=text], #profile #profile_col .profile_sep input[type=number]:focus, #profile #profile_col .profile_sep input[type=text]:focus {
@@ -191,6 +207,21 @@ button {
   border-style: none;
   border: none;
   background-color: #e7dfdd;
+  font-size: 20px;
+  color: #0e0b16;
+  outline: none;
+}
+
+#profile #profile_col input[type=submit] {
+  outline: none;
+  margin: 2vh;
+  text-align: center;
+  width: 30%;
+  height: 40px;
+  border-radius: 20px;
+  border-style: none;
+  border: none;
+  background-color: #a239ca;
   font-size: 20px;
   color: #0e0b16;
 }

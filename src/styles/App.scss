@@ -149,24 +149,37 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 5%;
+  padding-top: 8vh;
   height: 100%;
   width: 100%;
   text-align: center;
 
+  // @media screen and (max-width: 800px) {
+    
+  // }
+
   #profile_col{
-    width:50%;
+    width:40%;
 
     .profile_sep{
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 1vh;
   
       #profile_img{
         border-radius: 50%;
         border-color: 10px;
         border-style: solid;
-        width: 200px;
-        height: 200px;
+        width: 15vh;
+        height: 15vh;
+      }
+
+      .input_rows{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        input{
+          margin: 10px;
+        }
       }
 
       input[type=number], input[type=text], input[type=number]:focus, input[type=text]:focus{
@@ -179,9 +192,23 @@ button {
         background-color: $light-color;
         font-size: 20px;
         color: $dark-color;
-        
+        outline: none;
       }
 
+
+    }
+    input[type=submit]{
+      outline: none;
+      margin: 2vh;
+      text-align: center;
+      width: 30%;
+      height: 40px;
+      border-radius: 20px;
+      border-style: none;
+      border: none;
+      background-color: $accent-color;
+      font-size: 20px;
+      color: $dark-color;
     }
   }
   

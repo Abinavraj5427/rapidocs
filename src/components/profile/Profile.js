@@ -26,6 +26,7 @@ const Profile = () => {
         <div className="profile_sep">
           <label>Name</label>
           <input
+            type = "text"
             placeholder="enter name"
             value={
               !!firebase.auth().currentUser &&
@@ -39,6 +40,7 @@ const Profile = () => {
         <div className="profile_sep">
           <label>Phone Number</label>
           <input
+            type = "text"
             placeholder="999-999-9999"
             value={
               !!firebase.auth().currentUser &&
@@ -56,19 +58,27 @@ const Profile = () => {
 
         <br />
         <div className="profile_sep">
-          <label>Pharmacy</label>
-          <input placeholder="Address"></input>
-          <input placeholder="City"></input>
-          <input placeholder="State"></input>
-          <input type="number" placeholder="PIN"></input>
+            <label>Pharmacy</label>
+            <input type = "text" placeholder="Address"></input> 
+            <br/>
+            <div className = "input_rows">
+                <input type = "text" placeholder="City"></input>
+                <input type = "text" placeholder="State"></input>
+                <input type="number" placeholder="Zip"></input>
+            </div>
+            
         </div>
 
         <br />
         <div className="profile_sep">
           <label>Insurance</label>
-          <input placeholder="ex. Blue Cross Blue Shield"></input>
+          <input type = "text" placeholder="ex. Blue Cross Blue Shield"></input>
         </div>
+
+        
+        <input type = "submit" value = "Save"></input>
       </div>
+
     </div>
   );
 };
