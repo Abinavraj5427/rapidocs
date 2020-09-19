@@ -54,7 +54,7 @@ body {
     }
   }
 
-  input[type="submit"] {
+  input[type='submit'] {
     outline: none;
     margin: 2vh;
     text-align: center;
@@ -68,13 +68,13 @@ body {
   }
 
   @media screen and (min-width: 400px) {
-    input[type="submit"] {
+    input[type='submit'] {
       height: 40px;
     }
   }
 
   @media screen and (max-width: 400px) {
-    input[type="submit"] {
+    input[type='submit'] {
       height: 23px;
     }
   }
@@ -121,8 +121,8 @@ img {
 
 .btn {
   display: inline-block;
-  background: $light-color;
-  color: $dark-color;
+  background: $accent-color;
+  color: $light-color;
   padding: 0.4em 1.3em;
   font-size: 1.5em;
   border: none;
@@ -290,66 +290,75 @@ button {
   }
 }
 
-#doctor_form {
-  padding-top: 8vh;
+.saved {
   text-align: center;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+}
 
-  .center {
+#doctor_form {
+    padding-top: 8vh;
+    text-align: center;
     height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-    @media screen and (min-width: 400px) {
-      width: 50%;
-    }
-
-    @media screen and (max-width: 400px) {
-      width: 95%;
-      font-size: 2.5vh;
-    }
-
-    .tile {
-      background-color: $light-color;
-      margin: 5vh;
-      padding: 7vh;
-      border-radius: 2vh;
-
-      h1 {
-        color: black;
-        margin-bottom: 2vh;
-      }
-
-      h2 {
-        color: black;
-        margin-bottom: 2vh;
-      }
-
-      label {
-        color: black;
-      }
-      input[type="text"],
-      input[type="date"] {
-        margin-bottom: 4vh;
-        border-style: solid;
-        border-width: 2px;
-        border-color: gray;
-      }
-
-      input[type="submit"] {
-        background-color: $accent-color;
-        color: white;
+    .center {
+        height: 100%;
 
         @media screen and (min-width: 400px) {
-          width: 70%;
+            width: 50%;
         }
 
         @media screen and (max-width: 400px) {
-          width: 90%;
+            width: 95%;
+            font-size: 2.5vh;
         }
-      }
+
+        .tile {
+            background-color: $light-color;
+            margin: 5vh;
+            padding: 7vh;
+            padding-top: 4vh;
+            padding-bottom: 4vh;
+            border-radius: 1vh;
+            box-shadow: 20px 20px 50px #a139ca86;
+
+            h1 {
+                color: black;
+                margin-bottom: 4vh;
+            }
+
+            h2 {
+                color: black;
+                margin-bottom: 2vh;
+            }
+
+            label {
+                color: black;
+            }
+
+            input[type='text'],
+            input[type='date'] {
+                margin-bottom: 4vh;
+                margin-top: 1vh;
+                border-style: solid;
+                border-width: 2px;
+                border-color: gray;
+            }
+
+            input[type='submit'] {
+                background-color: $accent-color;
+                color: white;
+
+                @media screen and (min-width: 400px) {
+                    width: 70%;
+                }
+
+                @media screen and (max-width: 400px) {
+                    width: 90%;
+                }
+            }
+        }
     }
-  }
 }

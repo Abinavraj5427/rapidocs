@@ -5,14 +5,16 @@ import Medication from '../forms/Medication';
 import Allergy from '../forms/Allergy';
 import Diagnosis from '../forms/Diagnosis';
 import Appointment from '../forms/Appointment';
+import SpeedDial from '../layout/SpeedDial'; 
 
 const Records = () => {
   const [currentForm, setCurrentForm] = useState('Test');
 
-  const onChange = e => setCurrentForm(e.target.value);
+    const onChange = e => setCurrentForm(e.target.value);
 
   return (
     <div>
+      <SpeedDial />
       <p className='M'>Medical Records</p>
       <select value={currentForm} onChange={onChange}>
         <option value='Test'>Test</option>

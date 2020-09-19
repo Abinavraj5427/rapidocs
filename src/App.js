@@ -8,6 +8,7 @@ import firebase from "firebase";
 import MenuProvider from "react-flexible-sliding-menu";
 import Menu from "./components/layout/Menu";
 
+
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
   useEffect(() => {
@@ -28,10 +29,6 @@ const App = () => {
       <Fragment>
         <MenuProvider MenuComponent={Menu} animation="push">
           <Navbar />
-
-          {/* <button onClick={toggleMenu} className="primary-button">
-          Toggle Menu
-        </button> */}
 
           <Switch>
             <Route exact path="/" component={Landing} />
