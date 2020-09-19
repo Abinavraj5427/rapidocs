@@ -1,0 +1,96 @@
+/* variables */
+
+$primary-color: #4717f6;
+$dark-color: #0e0b16;
+$accent-color: #a239ca;
+$light-color: #e7dfdd;
+$mobile-breakpoint: 738px;
+
+/* defaults */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  background-color: $dark-color;
+  color: $primary-color;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* text */
+
+.XL {
+  font-size: 10em;
+  line-height: 1.2;
+  margin-bottom: 0.3em;
+}
+
+.L {
+  font-size: 3em;
+  line-height: 1.2;
+  margin-bottom: 0.4em;
+}
+
+.M {
+  font-size: 2em;
+  line-height: 1.2;
+  margin-bottom: 0.4em;
+}
+
+.S {
+  font-size: 1.5em;
+  line-height: 1.2;
+  margin-bottom: 0.2em;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2em;
+  margin-top: 10em;
+  margin-bottom: 5em;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  border-bottom: solid 1px $primary-color;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  ul {
+    display: flex;
+    font-size: 1.3em;
+  }
+
+  .link {
+    padding: 0.5em;
+    margin: 0 1em;
+  }
+}
