@@ -16,7 +16,7 @@ $mobile-breakpoint: 738px;
 
 body {
   // overflow: auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Futura', sans-serif;
   font-size: 1rem;
   background-color: $dark-color;
   color: $light-color;
@@ -27,7 +27,8 @@ body {
     height: 100%;
   }
 
-  input,input:focus {
+  input,
+  input:focus {
     text-align: center;
     width: 100%;
     border-radius: 5px;
@@ -40,18 +41,20 @@ body {
   }
 
   @media screen and (min-width: 400px) {
-    input, input:focus{
-      height:40px;
-    }
-  }  
-
-  @media screen and (max-width: 400px) {
-    input,input:focus {
-      height:23px;
+    input,
+    input:focus {
+      height: 40px;
     }
   }
 
-  input[type=submit]{
+  @media screen and (max-width: 400px) {
+    input,
+    input:focus {
+      height: 23px;
+    }
+  }
+
+  input[type='submit'] {
     outline: none;
     margin: 2vh;
     text-align: center;
@@ -65,19 +68,17 @@ body {
   }
 
   @media screen and (min-width: 400px) {
-    input[type=submit]{
-      height:40px;
+    input[type='submit'] {
+      height: 40px;
     }
   }
 
   @media screen and (max-width: 400px) {
-    input[type=submit]{
-      height:23px;
+    input[type='submit'] {
+      height: 23px;
     }
   }
 }
-
-
 
 a {
   color: $accent-color;
@@ -120,8 +121,8 @@ img {
 
 .btn {
   display: inline-block;
-  background: $light-color;
-  color: $dark-color;
+  background: $accent-color;
+  color: $light-color;
   padding: 0.4em 1.3em;
   font-size: 1.5em;
   border: none;
@@ -257,78 +258,78 @@ button {
           margin: 10px;
         }
       }
-
     }
-
   }
 }
 
-#doctor_form{
+.saved {
+  text-align: center;
+}
+
+#doctor_form {
   padding-top: 8vh;
   text-align: center;
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 
-  .center{
-    height:100%;
-    
+  .center {
+    height: 100%;
+
     @media screen and (min-width: 400px) {
-      width:50%;
+      width: 50%;
     }
 
     @media screen and (max-width: 400px) {
-      width:95%;
+      width: 95%;
       font-size: 2.5vh;
     }
 
-    .tile{
+    .tile {
       background-color: $light-color;
-      margin:5vh;
+      margin: 5vh;
       padding: 7vh;
       padding-top: 4vh;
       padding-bottom: 4vh;
-      border-radius: 1vh;   
+      border-radius: 1vh;
       box-shadow: 20px 20px 50px #a139ca86;
 
-      h1{
-        color:black;
-        margin-bottom:4vh;
+      h1 {
+        color: black;
+        margin-bottom: 4vh;
       }
 
-      h2{
-        color:black;
+      h2 {
+        color: black;
         margin-bottom: 2vh;
       }
 
-      label{
-        color:black;
+      label {
+        color: black;
       }
-      input[type=text], input[type=date]{
+      input[type='text'],
+      input[type='date'] {
         margin-bottom: 4vh;
         margin-top: 1vh;
         border-style: solid;
-        border-width:2px;
+        border-width: 2px;
         border-color: gray;
       }
 
-      input[type=submit]{
-        background-color:$accent-color;
-        color:white;
+      input[type='submit'] {
+        background-color: $accent-color;
+        color: white;
 
         @media screen and (min-width: 400px) {
-          width:70%;
+          width: 70%;
         }
-    
-        @media screen and (max-width: 400px) {
-          width:90%;
-        }
-    
-      }
 
-      
+        @media screen and (max-width: 400px) {
+          width: 90%;
+        }
+      }
     }
   }
 }
