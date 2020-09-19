@@ -6,10 +6,54 @@ import firebase from "firebase";
 
 const Profile = () => {
   return (
-    <div id="profile">
-      <div id="profile_col">
-        <div className="profile_sep">
-          <h1>Profile</h1>
+    <div id='profile'>
+        <div id = "profile_col">
+            <div className = "profile_sep">
+                <h1>Profile</h1>
+            </div>
+            <div className = "profile_sep">
+                <img
+                src={firebase.auth().currentUser.photoURL}
+                id="profile_img"
+                alt="Profile"
+                >
+                </img>
+            </div>
+            <br/>
+            <div className="profile_sep">
+                <label>Name</label>
+                <input
+                    placeholder={
+                    firebase.auth().currentUser.displayName
+                        ? firebase.auth().currentUser.displayName
+                        : "Enter Name"
+                    }
+                ></input>
+            </div>
+            <br/>
+            <div className = "profile_sep">
+                <input placeholder = "phone number"></input>
+            </div>
+            <br/>
+            <div className = "profile_sep">
+                <label>Date of Birth</label>
+                <input type="date"></input>
+            </div>
+            
+            <br/>
+            <div className = "profile_sep">
+                <label>Pharmacy</label>
+                <input placeholder = "Address"></input>
+                <input placeholder = "City"></input>
+                <input placeholder = "State"></input>
+                <input type = "number" placeholder = "PIN"></input>
+            </div>
+            
+            <br/>
+            <div className = "profile_sep">
+                <label>Insurance</label>
+                <input placeholder = "ex. Blue Cross Blue Shield"></input>
+            </div>
         </div>
         <div className="profile_sep">
           <img
@@ -65,7 +109,6 @@ const Profile = () => {
           <label>Insurance</label>
           <input placeholder="999-999-999"></input>
         </div>
-      </div>
     </div>
   );
 };
