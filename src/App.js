@@ -1,14 +1,12 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState, useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./styles/App.css";
 import Routes from "./components/routing/Routes";
 import Landing from "./components/layout/Landing";
 import Navbar from "./components/layout/Navbar";
-import Profile from "./components/profile/Profile";
 import firebase from "firebase";
-import db from "./firebase";
-import MyDoctor from "./components/forms/MyDoctor";
-import Procedure from "./components/forms/Procedure";
+import MenuProvider from "react-flexible-sliding-menu";
+import Menu from "./components/layout/Menu";
 
 
 const App = () => {
@@ -29,11 +27,13 @@ const App = () => {
   return (
     <Router>
       <Fragment>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route component={Routes} />
-        </Switch>
+        <MenuProvider MenuComponent={Menu} animation="push">
+          <Navbar />
+          <Switch>
+            <Route exact path="/" componenEt={Landing} />
+            <Route component={Routes} />
+          </Switch>
+        </MenuProvider>
       </Fragment>
     </Router>
   );

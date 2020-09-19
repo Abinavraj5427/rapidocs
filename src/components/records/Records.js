@@ -14,6 +14,7 @@ const Records = () => {
 
   return (
     <div>
+      <SpeedDial />
       <p className='M'>Medical Records</p>
       <select value={currentForm} onChange={onChange}>
         <option value='Test'>Test</option>
@@ -29,7 +30,6 @@ const Records = () => {
       {currentForm == 'Allergy' && <Allergy />}
       {currentForm == 'Diagnosis' && <Diagnosis />}
       {currentForm == 'Appointment' && <Appointment />}
-      <SpeedDial />
     </div>
   );
 };

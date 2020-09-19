@@ -20,8 +20,7 @@ const useStyles = makeStyles((theme) => ({
         zIndex: theme.zIndex.drawer + 2,
     },
     backDrop: {
-        zIndex: theme.zIndex.drawer + 1,
-        color: '#fff',
+        color: 'rgba(0, 0, 0, 1.0)',
     },
 }));
 
@@ -47,9 +46,13 @@ export default function SpeedDialTooltipOpen() {
         setOpen(false);
     };
 
+    const style = {
+        zIndex: 100,
+    }
+
     return (
         <div className={classes.root}>
-            <Backdrop open={open} />
+            <Backdrop style={style} open={open} />
             <SpeedDial
                 
                 ariaLabel="SpeedDial tooltip example"
