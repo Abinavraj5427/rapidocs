@@ -9,7 +9,6 @@ const Profile = () => {
     <div id="profile">
       <div id="profile_col">
         <div className="profile_sep">
-          <h1>Profile</h1>
         </div>
         <div className="profile_sep">
           <img
