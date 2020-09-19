@@ -10,18 +10,18 @@ import db from "./firebase";
 
 const App = () => {
   // useEffect(() => {
-  //   db.ref("patients/7139923350")
+  //   db.ref("patients")
   //     .once("value")
   //     .then(function (snapshot) {
   //       console.log(snapshot.val());
   //     });
+
+  //   db.ref("patients/" + "531381512").set({
+  //     name: "Aman Singh",
+  //     email: "asing@mail.com",
+  //   });
   // }, []);
 
-  // const [isSignedIn, setIsSignedIn] = useState(false);
-
-  // const handleChange = () => {
-  //   setIsSignedIn()
-  // }
   const [isSignedIn, setIsSignedIn] = useState(false);
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
