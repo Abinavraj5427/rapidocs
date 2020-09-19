@@ -323,4 +323,40 @@ button {
     width: 50%;
   }
 }
+
+.Menu {
+  padding: 1rem;
+  position: relative;
+  background: #282828;
+  height: 100%;
+}
+
+.Menu .menu-link {
+  color: #e7dfdd;
+  margin: 2vh;
+}
+
+.Menu .menu-link:hover {
+  background-color: #a239ca;
+}
+
+.Menu button {
+  background: none;
+  border: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  color: #e7dfdd;
+}
 /*# sourceMappingURL=App.css.map */
