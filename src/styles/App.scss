@@ -30,7 +30,7 @@ body {
   input,input:focus {
     text-align: center;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 5px;
     border-style: none;
     border: none;
     background-color: $light-color;
@@ -242,7 +242,7 @@ button {
 
       #profile_img {
         border-radius: 50%;
-        border-color: 10px;
+        // border-color: 10px;
         border-style: solid;
         width: 15vh;
         height: 15vh;
@@ -284,11 +284,16 @@ button {
       font-size: 2.5vh;
     }
 
-    .doctor_tile{
+    .tile{
       background-color: $light-color;
       margin:5vh;
-      padding: 5vh;
+      padding: 7vh;
       border-radius: 2vh;
+
+      h1{
+        color:black;
+        margin-bottom:2vh;
+      }
 
       h2{
         color:black;
@@ -298,15 +303,16 @@ button {
       label{
         color:black;
       }
-      input[type=text]{
+      input[type=text], input[type=date]{
         margin-bottom: 4vh;
         border-style: solid;
         border-width:2px;
-        border-color: $primary-color;
+        border-color: gray;
       }
 
       input[type=submit]{
         background-color:$accent-color;
+        color:white;
 
         @media screen and (min-width: 400px) {
           width:70%;
