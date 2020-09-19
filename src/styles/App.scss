@@ -147,9 +147,18 @@ button {
 #profile {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 
+<<<<<<< HEAD
   #profile_img {
+=======
+  #profile_img{
+    margin-top: 10%;
+>>>>>>> e9caa432f78a4b1016fe6410cf4855bd5e792540
     border-radius: 50%;
-    width: 20%;
+    border-color: 10px;
+    border-style: solid;
+    width: 200px;
+    height: 200px;
   }
 }

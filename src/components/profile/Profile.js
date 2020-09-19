@@ -1,5 +1,8 @@
 import React from 'react';
-import profile from '../../assets/Design1.PNG';
+// import { Image, Col, FormControl } from 'react-bootstrap';
+import InputGroup from 'react-bootstrap/InputGroup'
+import profile from '../../assets/Design2.PNG';
+
 
 const Profile = () => {
   return (
