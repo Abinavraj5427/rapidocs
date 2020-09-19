@@ -18,7 +18,7 @@ const MyDoctor = () => {
     const[curNumber, setCurNumber] = useState(undefined);
 
     return (
-        <div
+        <form
         className='form'
         id = "doctor_form"
         //   onSubmit={e => {
@@ -62,7 +62,7 @@ const MyDoctor = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     );
 };
 
