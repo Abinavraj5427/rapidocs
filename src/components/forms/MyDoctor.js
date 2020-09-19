@@ -18,7 +18,7 @@ const MyDoctor = () => {
     const[curNumber, setCurNumber] = useState(undefined);
 
     return (
-        <div
+        <form
         className='form'
         id = "doctor_form"
         //   onSubmit={e => {
@@ -41,7 +41,7 @@ const MyDoctor = () => {
                     {/* Show doctors */}
                     {
                         doctors.map(doctor => 
-                            <div className = 'doctor_tile'>
+                            <div className = 'tile'>
                                 <h2>Doctor {doctor.id+1}</h2>
                                 <label>Name</label>
                                 <input type = "text" value = {doctor.name}></input>
@@ -51,7 +51,7 @@ const MyDoctor = () => {
                         )
                     }
 
-                    <div className = 'doctor_tile'>
+                    <div className = 'tile'>
                         <label>Name</label>
                         <input type = "text" value = {curName} onChange = {e => setCurName(e.target.value)}></input>
                         <label>Phone</label>
@@ -62,7 +62,7 @@ const MyDoctor = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     );
 };
 
