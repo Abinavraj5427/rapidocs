@@ -272,16 +272,21 @@ button {
       label {
         color: black;
       }
+      select,
       input[type='text'],
+      input[type='time'],
+      input[type='file'],
       input[type='date'] {
         margin-bottom: 4vh;
         margin-top: 1vh;
         border-style: solid;
         border-width: 2px;
         border-color: gray;
+        font-size: 0.7em;
       }
 
-      input[type='submit'] {
+      input[type='submit'],
+      button {
         background-color: $accent-color;
         color: white;
         padding: 0.4em 1.3em;

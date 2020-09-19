@@ -47,7 +47,6 @@ const Procedure = () => {
 
   return (
     <Fragment>
-      {submitted && <p className='saved S'>Procedure Saved</p>}
       <form className='form' onSubmit={onSubmit}>
         <div className='center'>
           <div className='verticalAlign'>
@@ -70,9 +69,33 @@ const Procedure = () => {
                 onChange={onChange}
               />
               <label>Type of Procedure</label>
-              <input type='text' name='type' value={type} onChange={onChange} />
-              <input type='submit' className='btn' value = "Add Procedure">
-              </input>
+              <select name='type' value={type} onChange={onChange}>
+                <option value='Cardiology'>Cardiology</option>
+                <option value='Dentistry'>Dentistry</option>
+                <option value='Dermatology'>Dermatology</option>
+                <option value='Endocrinology'>Endocrinology</option>
+                <option value='Gastroenterology'>Gastroenterology</option>
+                <option value='Gynocology'>Gynocology</option>
+                <option value='Hematology'>Hematology</option>
+                <option value='Neurology'>Neurology</option>
+                <option value='Oncology'>Oncology</option>
+                <option value='Opthalmology'>Opthalmology</option>
+                <option value='Optometry'>Optometry</option>
+                <option value='Orthopedic'>Orthopedic</option>
+                <option value='Orthodontistry'>Orthodontistry</option>
+                <option value='Pediatric'>Pediatric</option>
+                <option value='Podiatry'>Podiatry</option>
+                <option value='Pulmonology'>Pulmonology</option>
+                <option value='Psychiatry'>Psychiatry</option>
+                <option value='Psychology'>Psychology</option>
+                <option value='Radiology'>Radiology</option>
+                <option value='Rheumatology'>Rheumatology</option>
+                <option value='Urology'>Urology</option>
+              </select>
+              <button type='submit' className='btn'>
+                Add Procedure
+              </button>
+              {submitted && <p className='saved S'>Procedure Saved</p>}
             </div>
           </div>
         </div>

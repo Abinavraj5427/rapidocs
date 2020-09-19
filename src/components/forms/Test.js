@@ -83,7 +83,6 @@ const TestForm = props => {
 
   return (
     <Fragment>
-      {submitted && <p className='saved S'>Test Saved</p>}
       <form className='form' id='doctor_form' onSubmit={onSubmit}>
         <div className='center'>
           <div className='verticalAlign'>
@@ -109,49 +108,11 @@ const TestForm = props => {
               <button type='submit' className='btn'>
                 Add Test
               </button>
+              {submitted && <p className='saved S'>Test Saved</p>}
             </div>
           </div>
         </div>
       </form>
-      {/* <form className='form' onSubmit={onSubmit}>
-        <div className='form-group'>
-          <label className='S'>Test Name</label>
-          <input
-            type='text'
-            placeholder='Test Title'
-            name='title'
-            value={title}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <label className='S'>Test Date</label>
-          <input
-            type='date'
-            placeholder='Test Date'
-            name='date'
-            value={date}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <label className='S'>Test Results File</label>
-          <input
-            type='file'
-            id='fileInputID'
-            placeholder='File Associated'
-            name='file'
-            value={file}
-            onChange={onChange}
-            className='btn'
-          />
-        </div>
-        <button type='submit' className='btn'>
-          Add This Test
-        </button>
-      </form> */}
     </Fragment>
   );
 };

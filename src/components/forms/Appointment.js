@@ -3,7 +3,7 @@ import firebase from 'firebase';
 
 const Appointment = () => {
   const [formData, setFormData] = useState({
-    practice: '',
+    location: '',
     doctor: '',
     date: '',
     time: '',
@@ -12,7 +12,7 @@ const Appointment = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const { practice, doctor, date, time, reason } = formData;
+  const { location, doctor, date, time, reason } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -36,7 +36,7 @@ const Appointment = () => {
 
     // clear form
     setFormData({
-      practice: '',
+      location: '',
       doctor: '',
       date: '',
       time: '',
@@ -49,17 +49,16 @@ const Appointment = () => {
 
   return (
     <Fragment>
-      {submitted && <p className='saved S'>Procedure Saved</p>}
       <form className='form' onSubmit={onSubmit}>
         <div className='center'>
           <div className='verticalAlign'>
             <div className='tile'>
               <h1>Appointment</h1>
-              <label>Practice</label>
+              <label>Location</label>
               <input
                 type='text'
-                name='practice'
-                value={practice}
+                name='location'
+                value={location}
                 onChange={onChange}
               />
               <label>Doctor</label>
@@ -83,6 +82,7 @@ const Appointment = () => {
               <button type='submit' className='btn'>
                 Add Appointment
               </button>
+              {submitted && <p className='saved S'>Appointment Saved</p>}
             </div>
           </div>
         </div>
