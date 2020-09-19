@@ -2,8 +2,10 @@ import React from 'react';
 
 const Landing = () => {
   return (
-    <div>
-      <h1>Landing Page</h1>
+    <div className='landing'>
+      <div className='landing-inner'>
+        <h1 className='L'>rapidocs</h1>
+      </div>
     </div>
   );
 };

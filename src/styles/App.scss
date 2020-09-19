@@ -15,7 +15,7 @@ $mobile-breakpoint: 738px;
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Futura', sans-serif;
   font-size: 1rem;
   background-color: $dark-color;
   color: $primary-color;
@@ -67,6 +67,28 @@ img {
   padding: 0 2em;
   margin-top: 10em;
   margin-bottom: 5em;
+}
+
+.landing {
+  position: relative;
+  // background-color: rgba(0, 0, 0, 0.3);
+  // background-image: url('../img/landingimage.jpg');
+  // background-blend-mode: multiply;
+  // background-size: cover;
+  height: 100vh;
+}
+
+.landing-inner {
+  color: $light-color;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .navbar {
