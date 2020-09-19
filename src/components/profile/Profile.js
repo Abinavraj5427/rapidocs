@@ -65,7 +65,6 @@ const Profile = () => {
     }
   };
   const handleChange = (event) => {
-    console.log([event.target.name]);
     setData({ ...data, [event.target.name]: event.target.value });
   };
   return (
@@ -94,6 +93,7 @@ const Profile = () => {
               value={name}
               onChange={handleChange}
               required
+              name="name"
             ></input>
           </div>
           <br />
@@ -104,6 +104,7 @@ const Profile = () => {
               placeholder="999-999-9999"
               value={phone}
               onChange={handleChange}
+              name="phone"
               required
             ></input>
           </div>
@@ -114,6 +115,7 @@ const Profile = () => {
               type="date"
               value={birthday}
               onChange={handleChange}
+              name="birthday"
               required
             ></input>
           </div>
@@ -126,6 +128,7 @@ const Profile = () => {
               placeholder="Address"
               value={address}
               onChange={handleChange}
+              name="address"
               required
             ></input>
             <br />
@@ -135,6 +138,7 @@ const Profile = () => {
                 placeholder="City"
                 value={city}
                 onChange={handleChange}
+                name="city"
                 required
               ></input>
               <input
@@ -142,6 +146,7 @@ const Profile = () => {
                 placeholder="State"
                 value={state}
                 onChange={handleChange}
+                name="state"
                 required
               ></input>
               <input
@@ -149,6 +154,7 @@ const Profile = () => {
                 placeholder="Zip"
                 value={zip}
                 onChange={handleChange}
+                name="zip"
                 required
               ></input>
             </div>
@@ -162,6 +168,7 @@ const Profile = () => {
               placeholder="Address"
               value={pharmacyAddress}
               onChange={handleChange}
+              name="pharmacyAddress"
               required
             ></input>
             <br />
@@ -171,6 +178,7 @@ const Profile = () => {
                 placeholder="City"
                 value={pharmacyCity}
                 onChange={handleChange}
+                name="pharmacyCity"
                 required
               ></input>
               <input
@@ -178,6 +186,7 @@ const Profile = () => {
                 placeholder="State"
                 value={pharmacyState}
                 onChange={handleChange}
+                name="pharmacyState"
                 required
               ></input>
               <input
@@ -185,6 +194,7 @@ const Profile = () => {
                 placeholder="Zip"
                 value={pharmacyZip}
                 onChange={handleChange}
+                name="pharmacyZip"
                 required
               ></input>
             </div>
@@ -194,6 +204,7 @@ const Profile = () => {
                 placeholder="Pharmacy Name"
                 value={pharmacyName}
                 onChange={handleChange}
+                name="pharmacyName"
                 required
               ></input>
               <input
@@ -201,6 +212,7 @@ const Profile = () => {
                 placeholder="Pharmacy Phone"
                 value={pharmacyPhone}
                 onChange={handleChange}
+                name="pharmacyPhone"
                 required
               ></input>
             </div>
@@ -231,6 +243,7 @@ const Profile = () => {
               placeholder="ex. Blue Cross Blue Shield"
               value={insurance}
               onChange={handleChange}
+              name="insurance"
               required
             ></input>
           </div>
