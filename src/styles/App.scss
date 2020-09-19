@@ -143,3 +143,20 @@ button {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+
+
+#profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  #profile_img{
+    margin-top: 10%;
+    border-radius: 50%;
+    border-color: 10px;
+    border-style: solid;
+    width: 200px;
+    height: 200px;
+  }
+
+}
