@@ -23,7 +23,7 @@ body {
 }
 
 a {
-  color: $primary-color;
+  color: $accent-color;
   text-decoration: none;
 }
 
@@ -103,7 +103,7 @@ img {
   z-index: 10;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px $primary-color;
+  border-bottom: solid 1px $accent-color;
   background-color: rgba(0, 0, 0, 0.9);
 
   ul {
@@ -145,8 +145,7 @@ button {
   margin-bottom: 1em;
 }
 
-
-#profile{
+#profile {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -184,5 +183,4 @@ button {
     }
   }
   
- 
 }

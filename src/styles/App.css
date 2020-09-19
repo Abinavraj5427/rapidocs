@@ -16,7 +16,7 @@ body {
 }
 
 a {
-  color: #4717f6;
+  color: #a239ca;
   text-decoration: none;
 }
 
@@ -106,7 +106,7 @@ img {
   z-index: 10;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px #4717f6;
+  border-bottom: solid 1px #a239ca;
   background-color: rgba(0, 0, 0, 0.9);
 }
 
