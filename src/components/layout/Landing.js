@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React from "react";
 import firebase from "firebase";
 // import firebaseui from "firebaseui";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
@@ -10,6 +10,7 @@ const Landing = () => {
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      firebase.auth.PhoneAuthProvider.PROVIDER_ID,
     ],
     callbacks: {
       signInSuccess: () => false,
