@@ -16,7 +16,7 @@ $mobile-breakpoint: 738px;
 
 body {
   // overflow: auto;
-  font-family: "Futura", sans-serif;
+  font-family: 'Futura', sans-serif;
   font-size: 1rem;
   background-color: $dark-color;
   color: $light-color;
@@ -40,19 +40,19 @@ body {
     outline: none;
   }
 
-  @media screen and (min-width: 400px) {
-    input,
-    input:focus {
-      height: 40px;
-    }
-  }
+  // @media screen and (min-width: 400px) {
+  //   input,
+  //   input:focus {
+  //     height: 40px;
+  //   }
+  // }
 
-  @media screen and (max-width: 400px) {
-    input,
-    input:focus {
-      height: 23px;
-    }
-  }
+  // @media screen and (max-width: 400px) {
+  //   input,
+  //   input:focus {
+  //     height: 23px;
+  //   }
+  // }
 
   input[type='submit'] {
     outline: none;
@@ -67,17 +67,7 @@ body {
     color: $dark-color;
   }
 
-  @media screen and (min-width: 400px) {
-    input[type='submit'] {
-      height: 40px;
-    }
-  }
-
-  @media screen and (max-width: 400px) {
-    input[type='submit'] {
-      height: 23px;
-    }
-  }
+  
 }
 
 a {
@@ -119,34 +109,9 @@ img {
   margin-bottom: 0.2em;
 }
 
-.btn {
-  display: inline-block;
-  background: $accent-color;
-  color: $light-color;
-  padding: 0.4em 1.3em;
-  font-size: 1.5em;
-  border: none;
-  margin-right: 0.5em;
-  border-radius: 0.7em;
-  text-align: center;
-  cursor: pointer;
-}
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 2em;
-  margin-top: 10em;
-  margin-bottom: 5em;
-}
 
 .landing {
   position: relative;
-  // background-color: rgba(0, 0, 0, 0.3);
-  // background-image: url('../img/landingimage.jpg');
-  // background-blend-mode: multiply;
-  // background-size: cover;
   height: 100vh;
 }
 
@@ -187,34 +152,6 @@ img {
     margin: 0 1em;
   }
 }
-/* menu */
-
-.Menu {
-  padding: 1rem;
-  position: relative;
-  background: #282828;
-  color: $light-color;
-  height: 100%;
-  padding-top: 20px;
-  text-align: center;
-
-  .header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .links {
-    font-size: 0.8em;
-    padding-top: 30px;
-
-    p {
-      font-weight: bold;
-      padding: 10px;
-    }
-  }
-}
 
 /* forms */
 
@@ -223,12 +160,12 @@ img {
   margin-bottom: 1.5em;
 }
 
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="password"],
-.form input[type="number"],
-.form input[type="date"],
-.form input[type="file"],
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='password'],
+.form input[type='number'],
+.form input[type='date'],
+.form input[type='file'],
 .form select,
 .form textarea {
   display: block;
@@ -239,7 +176,7 @@ img {
   font-family: inherit;
 }
 
-.form input[type="submit"],
+.form input[type='submit'],
 button {
   font-family: inherit;
   margin-top: 1em;
@@ -295,7 +232,7 @@ button {
 }
 
 .form {
-  padding-top: 8vh;
+  padding-top: 3vh;
   text-align: center;
   height: 100%;
   width: 100%;
@@ -305,18 +242,14 @@ button {
 
   .center {
     height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 
-    @media screen and (min-width: 400px) {
-      width: 70%;
+    @media screen and (min-width: 200px) {
+      width: 100%;
+      font-size: 2.5vh;
     }
 
-    @media screen and (max-width: 400px) {
-      width: 95%;
-      font-size: 2.5vh;
+    @media screen and (min-width: 800px) {
+      width: 70%;
     }
 
     .tile {
@@ -353,62 +286,18 @@ button {
       input[type='submit'] {
         background-color: $accent-color;
         color: white;
+        padding: 0.4em 1.3em;
+        border: none;
+        cursor: pointer;
 
-        @media screen and (min-width: 400px) {
-            width: 50%;
+        @media screen and (min-width: 200px) {
+          width: 80%;
         }
 
-        @media screen and (max-width: 400px) {
-            width: 95%;
-            font-size: 2.5vh;
+        @media screen and (min-width: 600px) {
+          width: 50%;
         }
-
-        .tile {
-            background-color: $light-color;
-            margin: 5vh;
-            padding: 7vh;
-            padding-top: 4vh;
-            padding-bottom: 4vh;
-            border-radius: 1vh;
-            box-shadow: 20px 20px 50px #a139ca86;
-
-            h1 {
-                color: black;
-                margin-bottom: 4vh;
-            }
-
-            h2 {
-                color: black;
-                margin-bottom: 2vh;
-            }
-
-            label {
-                color: black;
-            }
-
-            input[type='text'],
-            input[type='date'] {
-                margin-bottom: 4vh;
-                margin-top: 1vh;
-                border-style: solid;
-                border-width: 2px;
-                border-color: gray;
-            }
-
-            input[type='submit'] {
-                background-color: $accent-color;
-                color: white;
-
-                @media screen and (min-width: 400px) {
-                    width: 70%;
-                }
-
-                @media screen and (max-width: 400px) {
-                    width: 90%;
-                }
-            }
-        }
+      }
     }
-    
+  }
 }
-

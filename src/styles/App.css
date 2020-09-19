@@ -32,20 +32,6 @@ body input:focus {
   outline: none;
 }
 
-@media screen and (min-width: 400px) {
-  body input,
-  body input:focus {
-    height: 40px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  body input,
-  body input:focus {
-    height: 23px;
-  }
-}
-
 body input[type='submit'] {
   outline: none;
   margin: 2vh;
@@ -57,18 +43,6 @@ body input[type='submit'] {
   background-color: #a239ca;
   font-size: 20px;
   color: #0e0b16;
-}
-
-@media screen and (min-width: 400px) {
-  body input[type='submit'] {
-    height: 40px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  body input[type='submit'] {
-    height: 23px;
-  }
 }
 
 a {
@@ -107,28 +81,6 @@ img {
   font-size: 1.5em;
   line-height: 1.2;
   margin-bottom: 0.2em;
-}
-
-.btn {
-  display: inline-block;
-  background: #a239ca;
-  color: #e7dfdd;
-  padding: 0.4em 1.3em;
-  font-size: 1.5em;
-  border: none;
-  margin-right: 0.5em;
-  border-radius: 0.7em;
-  text-align: center;
-  cursor: pointer;
-}
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 2em;
-  margin-top: 10em;
-  margin-bottom: 5em;
 }
 
 .landing {
@@ -285,7 +237,7 @@ button {
 }
 
 .form {
-  padding-top: 8vh;
+  padding-top: 3vh;
   text-align: center;
   height: 100%;
   width: 100%;
@@ -305,16 +257,16 @@ button {
   height: 100%;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 200px) {
   .form .center {
-    width: 70%;
+    width: 100%;
+    font-size: 2.5vh;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 800px) {
   .form .center {
-    width: 95%;
-    font-size: 2.5vh;
+    width: 70%;
   }
 }
 
@@ -355,17 +307,20 @@ button {
 .form .center .tile input[type='submit'] {
   background-color: #a239ca;
   color: white;
+  padding: 0.4em 1.3em;
+  border: none;
+  cursor: pointer;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 200px) {
   .form .center .tile input[type='submit'] {
-    width: 70%;
+    width: 80%;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 600px) {
   .form .center .tile input[type='submit'] {
-    width: 90%;
+    width: 50%;
   }
 }
 /*# sourceMappingURL=App.css.map */

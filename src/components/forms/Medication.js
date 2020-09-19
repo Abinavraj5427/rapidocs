@@ -81,9 +81,8 @@ const Medication = () => {
               <input type='text' name='frequency' value={frequency} onChange={onChange} />
               <label>Dosage</label>
               <input type='text' name='reason' value={dosage} onChange={onChange} />
-              <button type='submit' className='btn'>
-                Add Procedure
-              </button>
+              <input type='submit' className='btn' value = "Add Medication">
+              </input>
             </div>
           </div>
         </div>
