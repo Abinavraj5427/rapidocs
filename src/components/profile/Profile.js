@@ -1,10 +1,10 @@
 import React from 'react';
 // import { Image, Col, FormControl } from 'react-bootstrap';
 import InputGroup from 'react-bootstrap/InputGroup'
-import profile from '../../assets/Design1.PNG';
+import profile from '../../assets/Design2.PNG';
 
 
-const Landing = () => {
+const Profile = () => {
   return (
     <div id = "profile">
         <h1>Profile</h1>
@@ -15,4 +15,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Profile;

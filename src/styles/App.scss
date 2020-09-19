@@ -148,11 +148,15 @@ button {
 #profile{
   display: flex;
   flex-direction: row;
+  justify-content: center;
 
   #profile_img{
-
+    margin-top: 10%;
     border-radius: 50%;
-    width: 20%;
+    border-color: 10px;
+    border-style: solid;
+    width: 200px;
+    height: 200px;
   }
 
 }

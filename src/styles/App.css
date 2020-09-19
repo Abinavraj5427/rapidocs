@@ -156,10 +156,17 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #profile #profile_img {
+  margin-top: 10%;
   border-radius: 50%;
-  width: 20%;
+  border-color: 10px;
+  border-style: solid;
+  width: 200px;
+  height: 200px;
 }
 /*# sourceMappingURL=App.css.map */
