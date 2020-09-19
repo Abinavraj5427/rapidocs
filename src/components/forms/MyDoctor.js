@@ -3,12 +3,38 @@ import firebase from 'firebase';
 import { render } from '@testing-library/react';
 
 const MyDoctor = () => {
-  const [doctors, setDoctors] = useState([]);
+  const [doctors, setDoctors] = useState([
+    {
+      id: 0,
+      name: 'Vitaly Roshetnikov',
+      number: '972-865-1672',
+    },
+    {
+      id: 1,
+      name: 'Joseph Martinez',
+      number: '972-865-1672',
+    },
+  ]);
   const [curName, setCurName] = useState(undefined);
   const [curNumber, setCurNumber] = useState(undefined);
 
   return (
-    <form className='form' id='doctor_form'>
+    <form
+      className='form'
+      id='doctor_form'
+      //   onSubmit={e => {
+      //     e.preventDefault();
+      //     let user = firebase.auth().currentUser;
+      //     if (user) {
+      //       const phoneNumber = user.phoneNumber;
+      //       firebase
+      //         .database()
+      //         .ref('patients/' + phoneNumber)
+      //         .set(formData);
+      //     }
+      //  }
+      //}
+    >
       <div className='center'>
         <h1>MyDoctors</h1>
 

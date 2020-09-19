@@ -71,9 +71,8 @@ const Procedure = () => {
               />
               <label>Type of Procedure</label>
               <input type='text' name='type' value={type} onChange={onChange} />
-              <button type='submit' className='btn'>
-                Add Procedure
-              </button>
+              <input type='submit' className='btn' value = "Add Procedure">
+              </input>
             </div>
           </div>
         </div>
