@@ -334,11 +334,14 @@ button {
 
 .Menu .menu-link {
   color: #e7dfdd;
-  margin: 2vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  padding: 5px;
 }
 
 .Menu .menu-link:hover {
   background-color: #a239ca;
+  cursor: pointer;
 }
 
 .Menu button {

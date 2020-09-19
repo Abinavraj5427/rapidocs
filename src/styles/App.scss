@@ -309,11 +309,14 @@ button {
   .menu-link{
   
     color:$light-color;
-    margin: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding: 5px;
   }
   
   .menu-link:hover{
     background-color: $accent-color;
+    cursor:pointer;
   }
 
   button {
