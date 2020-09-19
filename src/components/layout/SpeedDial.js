@@ -1,6 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVial } from '@fortawesome/free-solid-svg-icons';
+import { faPills } from '@fortawesome/free-solid-svg-icons';
+import { faAllergies } from '@fortawesome/free-solid-svg-icons';
+import { faCommentMedical } from '@fortawesome/free-solid-svg-icons';
+import { faProcedures } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Backdrop from '@material-ui/core/Backdrop';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
@@ -20,12 +26,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const actions = [
-    { icon: <FontAwesomeIcon icon="test" />, name: 'Test' },
-    { icon: <FontAwesomeIcon icon="pills" />, name: 'Medicication' },
-    { icon: <FontAwesomeIcon icon="allergies" />, name: 'Allergies' },
-    { icon: <FontAwesomeIcon icon="comment-medical" />, name: 'Diagnosis' },
-    { icon: <FontAwesomeIcon icon="procedures" />, name: 'Procedure' },
-    { icon: <FontAwesomeIcon icon="calendar" />, name: 'Appointment' }
+    { icon: <FontAwesomeIcon icon={faVial} />, name: 'Test' },
+    { icon: <FontAwesomeIcon icon={ faPills } />, name: 'Medicication' },
+    { icon: <FontAwesomeIcon icon={faAllergies} />, name: 'Allergies' },
+    { icon: <FontAwesomeIcon icon={faCommentMedical} />, name: 'Diagnosis' },
+    { icon: <FontAwesomeIcon icon={faProcedures} />, name: 'Procedure' },
+    { icon: <FontAwesomeIcon icon={faCalendar} />, name: 'Appointment' }
 ];
 
 export default function SpeedDialTooltipOpen() {
