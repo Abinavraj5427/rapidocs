@@ -22,9 +22,9 @@ const TestForm = props => {
           if (user) {
               const id = user.uid;
               const key = firebase.database().ref()
-                  .child('patients/' + { id } + '/tests').push().key;
+                  .child('patients/' + id + '/tests').push().key;
               let updates = {}; 
-              updates['patients/' + { id } + '/tests/' + { key }] = { formData };
+              updates['patients/' + id + '/tests/' + key] = { formData };
               firebase.database().ref().update(updates); 
         }
       }}
