@@ -16,6 +16,7 @@ TimelineRoot.setAttribute("layout", "1-column");
 let entries = []; 
 const Timeline = () => {
     useEffect(() => {
+        console.log("Is anything happening anymore?"); 
         firebase.auth().onAuthStateChanged((user) => {
             let id = 0;
             if (user) {
