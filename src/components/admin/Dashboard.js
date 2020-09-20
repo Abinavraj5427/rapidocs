@@ -5,24 +5,27 @@ import db from "../../firebase";
 const Dashboard = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
+  const [uid, setUid] = useState("0");
 
   function searchData() {
     console.log("search initiated for " + email);
 
     let ref = db.ref("patients");
     ref
-      .orderByChild("name")
+      .orderByChild("email")
       .equalTo(email)
       .on("child_added", function (snapshot) {
-        let uid = snapshot.key;
-        if (uid)
+        let temp = snapshot.key;
+        if (temp) {
+          setUid(temp);
           ref
-            .child(uid)
+            .child(temp)
             .once("value")
             .then(function (sn) {
               console.log(sn.val());
               createPDF(sn.val());
             });
+        }
       });
   }
 
