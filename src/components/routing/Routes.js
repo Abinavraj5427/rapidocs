@@ -7,7 +7,7 @@ import MyDoctor from "../forms/MyDoctor";
 import Login from "../layout/Login";
 import AdminRegister from "../admin/AdminRegister";
 import AdminDashboard from "../admin/Dashboard";
-// import ViewTimeline from "../timeline/ViewTimeline";
+import ViewTimeline from "../timeline/ViewTimeline";
 
 const Routes = () => {
   return (
@@ -21,7 +21,7 @@ const Routes = () => {
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/verifyphone" component={VerifyPhone} />
         <Route path="/profile" component={Profile} />
-        {/* <Route path="/timeline" component={ViewTimeline} /> */}
+        <Route path="/timeline" component={ViewTimeline} />
       </Switch>
     </section>
   );
