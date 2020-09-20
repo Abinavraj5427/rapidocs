@@ -41,13 +41,13 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Landing}>
               {userType ? (
-                userType == "patient" ? (
+                userType === "patient" ? (
                   <Redirect to="/profile" />
                 ) : (
                   <Redirect to="/admin" />
                 )
               ) : (
-                <div></div>
+                console.log("home")
               )}
             </Route>
             <Route component={Routes} />
