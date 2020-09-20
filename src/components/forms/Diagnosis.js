@@ -5,6 +5,7 @@ const Diagnosis = () => {
   const [formData, setFormData] = useState({
     name: '',
     date: '',
+    type: '',
     doctor: '',
     severity: 0,
     file: '',
@@ -12,7 +13,7 @@ const Diagnosis = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const { name, date, doctor, severity, file } = formData;
+  const { name, date, type, doctor, severity, file } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -63,6 +64,7 @@ const Diagnosis = () => {
             updates['patients/' + id + '/diagnosis/' + key] = {
               name: formData.name,
               date: formData.date,
+              type: formData.type,
               doctor: formData.doctor,
               severity: formData.severity,
               fileName: downloadURL,
@@ -75,8 +77,11 @@ const Diagnosis = () => {
 
     // clear form
     setFormData({
-      title: '',
+      name: '',
       date: '',
+      type: '',
+      doctor: '',
+      severity: 0,
       file: '',
     });
 
@@ -86,7 +91,6 @@ const Diagnosis = () => {
 
   return (
     <Fragment>
-      {submitted && <p className='saved S'>Procedure Saved</p>}
       <form className='form' onSubmit={onSubmit}>
         <div className='center'>
           <div className='verticalAlign'>
@@ -103,6 +107,30 @@ const Diagnosis = () => {
                 value={doctor}
                 onChange={onChange}
               />
+              <label>Type of Diagnosis</label>
+              <select name='type' value={type} onChange={onChange}>
+                <option value='Cardiology'>Cardiology</option>
+                <option value='Dentistry'>Dentistry</option>
+                <option value='Dermatology'>Dermatology</option>
+                <option value='Endocrinology'>Endocrinology</option>
+                <option value='Gastroenterology'>Gastroenterology</option>
+                <option value='Gynocology'>Gynocology</option>
+                <option value='Hematology'>Hematology</option>
+                <option value='Neurology'>Neurology</option>
+                <option value='Oncology'>Oncology</option>
+                <option value='Opthalmology'>Opthalmology</option>
+                <option value='Optometry'>Optometry</option>
+                <option value='Orthopedic'>Orthopedic</option>
+                <option value='Orthodontistry'>Orthodontistry</option>
+                <option value='Pediatric'>Pediatric</option>
+                <option value='Podiatry'>Podiatry</option>
+                <option value='Pulmonology'>Pulmonology</option>
+                <option value='Psychiatry'>Psychiatry</option>
+                <option value='Psychology'>Psychology</option>
+                <option value='Radiology'>Radiology</option>
+                <option value='Rheumatology'>Rheumatology</option>
+                <option value='Urology'>Urology</option>
+              </select>
               <label>Severity</label>
               <select name='severity' value={severity} onChange={onChange}>
                 <option value={1}>1</option>
@@ -127,6 +155,7 @@ const Diagnosis = () => {
               <button type='submit' className='btn'>
                 Add Diagnosis
               </button>
+              {submitted && <p className='saved S'>Diagnosis Saved</p>}
             </div>
           </div>
         </div>

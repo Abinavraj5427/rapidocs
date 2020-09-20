@@ -61,7 +61,6 @@ const Medication = () => {
 
   return (
     <Fragment>
-      {submitted && <p className='saved S'>Procedure Saved</p>}
       <form className='form' onSubmit={onSubmit}>
         <div className='center'>
           <div className='verticalAlign'>
@@ -114,6 +113,7 @@ const Medication = () => {
               <button type='submit' className='btn'>
                 Add Medication
               </button>
+              {submitted && <p className='saved S'>Medication Saved</p>}
             </div>
           </div>
         </div>

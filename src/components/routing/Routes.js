@@ -10,7 +10,7 @@ import AdminDashboard from "../admin/Dashboard";
 
 const Routes = () => {
   return (
-    <section className="container">
+    <section>
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/adminregister" component={AdminRegister} />
