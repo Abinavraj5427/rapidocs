@@ -15,11 +15,15 @@ import MenuProvider from "react-flexible-sliding-menu";
 import Menu from "./components/layout/Menu";
 
 const App = () => {
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [userType, setUser] = useState(null);
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       //true if user is an object, false otherwise
-      setIsSignedIn(!!user);
+      // setIsSignedIn(!!user);
+      if (!!user) {
+        if (user.email === "admin@admin.com") setUser("admin");
+        else setUser("patient");
+      }
     });
   }, []);
 
@@ -36,7 +40,15 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Landing}>
-              {isSignedIn && <Redirect to="/records" />}
+              {userType ? (
+                userType == "patient" ? (
+                  <Redirect to="/records" />
+                ) : (
+                  <Redirect to="/admin" />
+                )
+              ) : (
+                <div></div>
+              )}
             </Route>
             <Route component={Routes} />
           </Switch>

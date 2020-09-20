@@ -68,8 +68,6 @@ const Profile = () => {
     setData({ ...data, [event.target.name]: event.target.value });
   };
 
-  const logout = () => {};
-
   return (
     <div>
       {/* <VerifyPhone open={open} newPhoneNum={phone} /> */}
