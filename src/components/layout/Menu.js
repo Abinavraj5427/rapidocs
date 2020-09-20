@@ -45,6 +45,12 @@ function Menu() {
         {currentUser === "patient" && (
           <div>
             <p
+              onClick={() => history.push("/timeline")}
+              className="menu-link link S"
+            >
+              My Timeline
+            </p>
+            <p
               onClick={() => history.push("/records")}
               className="menu-link link S"
             >
