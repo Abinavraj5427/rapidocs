@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import db from "../../firebase";
+import Timeline from "../layout/Timeline";
 
 const Dashboard = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
-  const [uid, setUid] = useState("0");
+  const [uid, setUid] = useState(null);
 
   function searchData() {
     // admin
@@ -63,6 +64,7 @@ const Dashboard = () => {
           </div>
         </div>
       </form>
+      {uid && <Timeline uid={uid} />}
     </div>
   );
 };
