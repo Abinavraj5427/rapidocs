@@ -80,7 +80,7 @@ const Medication = () => {
                 value={start}
                 onChange={onChange}
               />
-              <label>Date dateed</label>
+              <label>Date Ended</label>
               <input type='date' name='date' value={date} onChange={onChange} />
               <label>Doctor Who Prescribed</label>
               <input

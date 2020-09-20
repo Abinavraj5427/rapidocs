@@ -41,13 +41,8 @@ const App = () => {
           <Switch>
             <Route exact path='/' component={Landing}>
               {userType ? (
-<<<<<<< HEAD
                 userType === 'patient' ? (
                   <Redirect to='/profile' />
-=======
-                userType === "patient" ? (
-                  <Redirect to="/profile" />
->>>>>>> 759f6eb2b57f309a1cbb82dbb754932b292dcc26
                 ) : (
                   <Redirect to='/admin' />
                 )
