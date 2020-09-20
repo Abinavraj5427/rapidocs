@@ -5,7 +5,6 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
-// import { useHistory } from "react-router-dom";
 import './styles/App.css';
 import Routes from './components/routing/Routes';
 import Landing from './components/layout/Landing';
@@ -27,12 +26,6 @@ const App = () => {
     });
   }, []);
 
-  // tests whether isSignedIn changed
-  // useEffect(() => {
-  //   console.log(isSignedIn);
-  //   if (isSignedIn) console.log(firebase.auth().currentUser.displayName);
-  // }, [isSignedIn]);
-
   return (
     <Router>
       <Fragment>
@@ -41,18 +34,13 @@ const App = () => {
           <Switch>
             <Route exact path='/' component={Landing}>
               {userType ? (
-<<<<<<< HEAD
                 userType === 'patient' ? (
                   <Redirect to='/profile' />
-=======
-                userType === "patient" ? (
-                  <Redirect to="/profile" />
->>>>>>> 759f6eb2b57f309a1cbb82dbb754932b292dcc26
                 ) : (
                   <Redirect to='/admin' />
                 )
               ) : (
-                console.log("home")
+                console.log('home')
               )}
             </Route>
             <Route component={Routes} />

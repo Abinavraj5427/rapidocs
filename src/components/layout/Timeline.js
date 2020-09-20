@@ -15,7 +15,7 @@ import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const store = [];
-const Timeline = () => {
+const Timeline = ({ uid }) => {
   const [entries, setEntries] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,8 @@ const Timeline = () => {
     firebase.auth().onAuthStateChanged(user => {
       let id = 0;
       if (user) {
-        id = user.uid;
+        if (uid === 0) id = user.uid;
+        else id = uid;
         let storageRef = firebase
           .database()
           .ref('patients/' + id + '/allergies/');
