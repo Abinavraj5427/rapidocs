@@ -431,4 +431,18 @@ button {
   height: 70px;
   width: 70px;
 }
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f50606;
+}
 /*# sourceMappingURL=App.css.map */
