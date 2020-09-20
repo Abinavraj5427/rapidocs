@@ -8,14 +8,12 @@ $mobile-breakpoint: 738px;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
-
 /* defaults */
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
 
 body {
@@ -58,7 +56,7 @@ body {
   //   }
   // }
 
-  input[type="submit"] {
+  input[type='submit'] {
     outline: none;
     margin: 2vh;
     text-align: center;
@@ -201,14 +199,14 @@ img {
   margin-bottom: 1.5em;
 }
 
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="password"],
-.form input[type="number"],
-.form input[type="date"],
-.form input[type="file"],
-.form select,
-.form textarea {
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='date'],
+input[type='file'],
+select,
+textarea {
   display: block;
   width: 100%;
   padding: 0.4em;
@@ -217,7 +215,7 @@ img {
   font-family: inherit;
 }
 
-.form input[type="submit"],
+input[type='submit'],
 button {
   font-family: inherit;
   margin-top: 1em;
@@ -317,10 +315,10 @@ button {
         color: black;
       }
       select,
-      input[type="text"],
-      input[type="time"],
-      input[type="file"],
-      input[type="date"] {
+      input[type='text'],
+      input[type='time'],
+      input[type='file'],
+      input[type='date'] {
         margin-bottom: 4vh;
         margin-top: 1vh;
         border-style: solid;
@@ -329,7 +327,7 @@ button {
         font-size: 0.7em;
       }
 
-      input[type="submit"],
+      input[type='submit'],
       button {
         background-color: $accent-color;
         color: white;
