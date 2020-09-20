@@ -91,6 +91,11 @@ const SpeedDialToolTip = ({ setCurrentForm }) => {
     setOpen(false);
   };
 
+  const handleClick = name => {
+    setOpen(false);
+    setCurrentForm(name);
+  };
+
   const style = {
     zIndex: 100,
   };
@@ -113,7 +118,7 @@ const SpeedDialToolTip = ({ setCurrentForm }) => {
             icon={action.icon}
             tooltipTitle={action.name}
             tooltipOpen
-            onClick={handleClose}
+            onClick={() => handleClick(action.name)}
           />
         ))}
       </SpeedDial>
