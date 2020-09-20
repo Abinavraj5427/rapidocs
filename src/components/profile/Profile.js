@@ -90,6 +90,11 @@ const Profile = () => {
             ></img>
           </div>
           <br />
+          <p>
+            Note: you must fill out this form to be searchable by your medical
+            provider!
+          </p>
+          <br />
           <div className="profile_sep">
             <label>Name</label>
             <input
@@ -124,7 +129,6 @@ const Profile = () => {
               required
             ></input>
           </div>
-
           <br />
           <div className="profile_sep">
             <label>Address</label>
@@ -164,7 +168,6 @@ const Profile = () => {
               ></input>
             </div>
           </div>
-
           <br />
           <div className="profile_sep">
             <label>Pharmacy</label>
@@ -222,9 +225,7 @@ const Profile = () => {
               ></input>
             </div>
           </div>
-
           <br />
-
           <br />
           <div className="profile_sep">
             <label>Insurance</label>
