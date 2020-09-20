@@ -46,10 +46,6 @@ const Profile = () => {
   useEffect(() => {
     let user = undefined;
     if (!!firebase.auth().currentUser) user = firebase.auth().currentUser;
-    // if (user && firebase.auth().currentUser.displayName)
-    //   setData({ name: firebase.auth().currentUser.displayName });
-    // if (user && firebase.auth().currentUser.phoneNumber)
-    //   setData({ phone: firebase.auth().currentUser.phoneNumber });
     if (user) {
       const id = user.uid;
       firebase
@@ -58,26 +54,6 @@ const Profile = () => {
         .once('value')
         .then(snapshot => {
           let d = snapshot.val();
-          // if (d.name) setData({ ...data, name: d.name });
-          // if (d.phone) setData({ ...data, phone: d.phone });
-          // if (d.birthday) setData({ ...data, birthday: d.birthday });
-          // if (d.address) setData({ ...data, address: d.address });
-          // if (d.city) setData({ ...data, city: d.city });
-          // if (d.state) setData({ ...data, state: d.state });
-          // if (d.zip) setData({ ...data, zip: d.zip });
-          // if (d.pharmacyAddress)
-          //   setData({ ...data, pharmacyAddress: d.pharmacyAddress });
-          // if (d.pharmacyCity)
-          //   setData({ ...data, pharmacyCity: d.pharmacyCity });
-          // if (d.pharmacyState)
-          //   setData({ ...data, pharmacyState: d.pharmacyState });
-          // if (d.pharmacyZip) setData({ ...data, pharmacyZip: d.pharmacyZip });
-          // if (d.pharmacyPhone)
-          //   setData({ ...data, pharmacyPhone: d.pharmacyPhone });
-          // if (d.pharmacyName)
-          //   setData({ ...data, pharmacyName: d.pharmacyName });
-          // if (d.insurance) setData({ ...data, insurance: d.insurance });
-          // console.log(data);
           setData({
             name: d.name,
             phone: d.phone,
@@ -116,7 +92,6 @@ const Profile = () => {
 
   return (
     <div>
-      {/* <VerifyPhone open={open} newPhoneNum={phone} /> */}
       <form id='profile' onSubmit={handleSubmit}>
         <div id='profile_col'>
           <div className='profile_sep'></div>
