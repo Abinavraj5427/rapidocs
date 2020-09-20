@@ -14,7 +14,7 @@ import { faProcedures } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const store = [];
+let store = [];
 const Timeline = ({ uid }) => {
   const [entries, setEntries] = useState([]);
   const [done, setDone] = useState(false);
@@ -32,6 +32,7 @@ const Timeline = ({ uid }) => {
 
   useEffect(() => {
     setEntries([...entries].sort(sortFunction));
+    store = [];
   }, [done]);
 
   useEffect(() => {

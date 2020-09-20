@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 // import { Image, Col, FormControl } from 'react-bootstrap';
-import InputGroup from "react-bootstrap/InputGroup";
-import profile from "../../assets/Design2.PNG";
-import firebase from "firebase";
-import db from "../../firebase";
-import VerifyPhone from "./VerifyPhone";
+import InputGroup from 'react-bootstrap/InputGroup';
+import profile from '../../assets/Design2.PNG';
+import firebase from 'firebase';
+import db from '../../firebase';
+import VerifyPhone from './VerifyPhone';
 
 const Profile = () => {
   const [data, setData] = useState({
@@ -44,49 +44,91 @@ const Profile = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    if (
-      !!firebase.auth().currentUser &&
-      firebase.auth().currentUser.displayName
-    )
-      setData({ name: firebase.auth().currentUser.displayName });
-    if (
-      !!firebase.auth().currentUser &&
-      firebase.auth().currentUser.phoneNumber
-    )
-      setData({ phone: firebase.auth().currentUser.phoneNumber });
+    let user = undefined;
+    if (!!firebase.auth().currentUser) user = firebase.auth().currentUser;
+    // if (user && firebase.auth().currentUser.displayName)
+    //   setData({ name: firebase.auth().currentUser.displayName });
+    // if (user && firebase.auth().currentUser.phoneNumber)
+    //   setData({ phone: firebase.auth().currentUser.phoneNumber });
+    if (user) {
+      const id = user.uid;
+      firebase
+        .database()
+        .ref(`patients/${id}`)
+        .once('value')
+        .then(snapshot => {
+          let d = snapshot.val();
+          // if (d.name) setData({ ...data, name: d.name });
+          // if (d.phone) setData({ ...data, phone: d.phone });
+          // if (d.birthday) setData({ ...data, birthday: d.birthday });
+          // if (d.address) setData({ ...data, address: d.address });
+          // if (d.city) setData({ ...data, city: d.city });
+          // if (d.state) setData({ ...data, state: d.state });
+          // if (d.zip) setData({ ...data, zip: d.zip });
+          // if (d.pharmacyAddress)
+          //   setData({ ...data, pharmacyAddress: d.pharmacyAddress });
+          // if (d.pharmacyCity)
+          //   setData({ ...data, pharmacyCity: d.pharmacyCity });
+          // if (d.pharmacyState)
+          //   setData({ ...data, pharmacyState: d.pharmacyState });
+          // if (d.pharmacyZip) setData({ ...data, pharmacyZip: d.pharmacyZip });
+          // if (d.pharmacyPhone)
+          //   setData({ ...data, pharmacyPhone: d.pharmacyPhone });
+          // if (d.pharmacyName)
+          //   setData({ ...data, pharmacyName: d.pharmacyName });
+          // if (d.insurance) setData({ ...data, insurance: d.insurance });
+          // console.log(data);
+          setData({
+            name: d.name,
+            phone: d.phone,
+            birthday: d.birthday,
+            address: d.address,
+            city: d.city,
+            state: d.state,
+            zip: d.zip,
+            pharmacyAddress: d.pharmacyAddress,
+            pharmacyCity: d.pharmacyCity,
+            pharmacyState: d.pharmacyState,
+            pharmacyZip: d.pharmacyZip,
+            pharmacyName: d.pharmacyName,
+            pharmacyPhone: d.pharmacyPhone,
+            insurance: d.insurance,
+          });
+        });
+    }
   }, [firebase.auth().currentUser]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     console.log(data);
     let user = firebase.auth().currentUser;
     if (user) {
       let uid = user.uid;
-      db.ref(`patients/${uid}`).update({ ...data, email: user.email });
+      db.ref(`patients/${uid}`).update(data);
     }
 
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 5000);
   };
-  const handleChange = (event) => {
+  const handleChange = event => {
     setData({ ...data, [event.target.name]: event.target.value });
   };
 
   return (
     <div>
       {/* <VerifyPhone open={open} newPhoneNum={phone} /> */}
-      <form id="profile" onSubmit={handleSubmit}>
-        <div id="profile_col">
-          <div className="profile_sep"></div>
-          <div className="profile_sep">
+      <form id='profile' onSubmit={handleSubmit}>
+        <div id='profile_col'>
+          <div className='profile_sep'></div>
+          <div className='profile_sep'>
             <img
               src={
                 !!firebase.auth().currentUser
                   ? firebase.auth().currentUser.photoURL
                   : profile
               }
-              id="profile_img"
-              alt="Profile"
+              id='profile_img'
+              alt='Profile'
             ></img>
           </div>
           <br />
@@ -95,151 +137,151 @@ const Profile = () => {
             provider!
           </p>
           <br />
-          <div className="profile_sep">
+          <div className='profile_sep'>
             <label>Name</label>
             <input
-              type="text"
-              placeholder="enter name"
+              type='text'
+              placeholder='enter name'
               value={name}
               onChange={handleChange}
               required
-              name="name"
+              name='name'
             ></input>
           </div>
           <br />
-          <div className="profile_sep">
+          <div className='profile_sep'>
             <label>Phone Number</label>
             <input
-              type="text"
-              placeholder="999-999-9999"
+              type='text'
+              placeholder='999-999-9999'
               value={phone}
               onChange={handleChange}
-              name="phone"
+              name='phone'
               required
             ></input>
           </div>
           <br />
-          <div className="profile_sep">
+          <div className='profile_sep'>
             <label>Date of Birth</label>
             <input
-              type="date"
+              type='date'
               value={birthday}
               onChange={handleChange}
-              name="birthday"
+              name='birthday'
               required
             ></input>
           </div>
           <br />
-          <div className="profile_sep">
+          <div className='profile_sep'>
             <label>Address</label>
             <input
-              type="text"
-              placeholder="Address"
+              type='text'
+              placeholder='Street Number'
               value={address}
               onChange={handleChange}
-              name="address"
+              name='address'
               required
             ></input>
             <br />
-            <div className="input_rows">
+            <div className='input_rows'>
               <input
-                type="text"
-                placeholder="City"
+                type='text'
+                placeholder='City'
                 value={city}
                 onChange={handleChange}
-                name="city"
+                name='city'
                 required
               ></input>
               <input
-                type="text"
-                placeholder="State"
+                type='text'
+                placeholder='State'
                 value={state}
                 onChange={handleChange}
-                name="state"
+                name='state'
                 required
               ></input>
               <input
-                type="number"
-                placeholder="Zip"
+                type='number'
+                placeholder='Zip'
                 value={zip}
                 onChange={handleChange}
-                name="zip"
+                name='zip'
                 required
               ></input>
             </div>
           </div>
           <br />
-          <div className="profile_sep">
+          <div className='profile_sep'>
             <label>Pharmacy</label>
             <input
-              type="text"
-              placeholder="Address"
+              type='text'
+              placeholder='Street Number'
               value={pharmacyAddress}
               onChange={handleChange}
-              name="pharmacyAddress"
+              name='pharmacyAddress'
               required
             ></input>
             <br />
-            <div className="input_rows">
+            <div className='input_rows'>
               <input
-                type="text"
-                placeholder="City"
+                type='text'
+                placeholder='City'
                 value={pharmacyCity}
                 onChange={handleChange}
-                name="pharmacyCity"
+                name='pharmacyCity'
                 required
               ></input>
               <input
-                type="text"
-                placeholder="State"
+                type='text'
+                placeholder='State'
                 value={pharmacyState}
                 onChange={handleChange}
-                name="pharmacyState"
+                name='pharmacyState'
                 required
               ></input>
               <input
-                type="number"
-                placeholder="Zip"
+                type='number'
+                placeholder='Zip'
                 value={pharmacyZip}
                 onChange={handleChange}
-                name="pharmacyZip"
+                name='pharmacyZip'
                 required
               ></input>
             </div>
-            <div className="input_rows">
+            <div className='input_rows'>
               <input
-                type="text"
-                placeholder="Pharmacy Name"
+                type='text'
+                placeholder='Pharmacy Name'
                 value={pharmacyName}
                 onChange={handleChange}
-                name="pharmacyName"
+                name='pharmacyName'
                 required
               ></input>
               <input
-                type="number"
-                placeholder="Pharmacy Phone"
+                type='number'
+                placeholder='Pharmacy Phone'
                 value={pharmacyPhone}
                 onChange={handleChange}
-                name="pharmacyPhone"
+                name='pharmacyPhone'
                 required
               ></input>
             </div>
           </div>
           <br />
           <br />
-          <div className="profile_sep">
+          <div className='profile_sep'>
             <label>Insurance</label>
             <input
-              type="text"
-              placeholder="ex. Blue Cross Blue Shield"
+              type='text'
+              placeholder='ex. Blue Cross Blue Shield'
               value={insurance}
               onChange={handleChange}
-              name="insurance"
+              name='insurance'
               required
             ></input>
           </div>
-          {submitted && <p className="saved S">Profile Saved</p>}
-          <input type="submit" value="Save" />
+          {submitted && <p className='saved S'>Profile Saved</p>}
+          <input type='submit' value='Save' />
         </div>
       </form>
     </div>
