@@ -6,6 +6,9 @@ $accent-color: #a239ca;
 $light-color: #e7dfdd;
 $mobile-breakpoint: 738px;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+
 /* defaults */
 
 * {
@@ -16,7 +19,7 @@ $mobile-breakpoint: 738px;
 
 body {
   // overflow: auto;
-  font-family: "Futura", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   background-color: $dark-color;
   color: $light-color;
