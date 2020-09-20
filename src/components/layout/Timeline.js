@@ -152,7 +152,7 @@ function decideDescription(data, type) {
   if (type === 'Medication')
     return (
       'You are taking ' +
-      data.child('medicationName').val() +
+      data.child('name').val() +
       ' at a dosage of ' +
       data.child('dosage').val() +
       ' and frequency of ' +

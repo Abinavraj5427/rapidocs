@@ -58,15 +58,24 @@ const Procedure = () => {
                 name='title'
                 value={title}
                 onChange={onChange}
+                placeholder='ex: ankle surgery'
+                required
               />
               <label>Date Conducted</label>
-              <input type='date' name='date' value={date} onChange={onChange} />
+              <input
+                type='date'
+                name='date'
+                value={date}
+                onChange={onChange}
+                required
+              />
               <label>Location</label>
               <input
                 type='text'
                 name='location'
                 value={location}
                 onChange={onChange}
+                placeholder='ex: Global Chiropractic'
               />
               <label>Type of Procedure</label>
               <select name='type' value={type} onChange={onChange} required>

@@ -94,9 +94,17 @@ const TestForm = props => {
                 name='title'
                 value={title}
                 onChange={onChange}
+                placeholder='ex: basic metabolic panel'
+                required
               />
               <label>Date Conducted</label>
-              <input type='date' name='date' value={date} onChange={onChange} />
+              <input
+                type='date'
+                name='date'
+                value={date}
+                onChange={onChange}
+                required
+              />
               <label>Test Results File</label>
               <input
                 type='file'
@@ -105,8 +113,7 @@ const TestForm = props => {
                 onChange={onChange}
                 id='fileInputID'
               />
-              <input type='submit' className='btn' value = "Add Test">
-              </input>
+              <input type='submit' className='btn' value='Add Test'></input>
               {submitted && <p className='saved S'>Test Saved</p>}
             </div>
           </div>

@@ -97,9 +97,21 @@ const Diagnosis = () => {
             <div className='tile'>
               <h1>Diagnosis</h1>
               <label>Condition Name</label>
-              <input type='text' name='name' value={name} onChange={onChange} />
+              <input
+                type='text'
+                name='name'
+                value={name}
+                onChange={onChange}
+                required
+              />
               <label>Date Discovered</label>
-              <input type='date' name='date' value={date} onChange={onChange} />
+              <input
+                type='date'
+                name='date'
+                value={date}
+                onChange={onChange}
+                required
+              />
               <label>Doctor Who Diagnosed You</label>
               <input
                 type='text'
@@ -133,7 +145,13 @@ const Diagnosis = () => {
                 <option value='Urology'>Urology</option>
               </select>
               <label>Severity</label>
-              <select name='severity' value={severity} onChange={onChange}>
+              <select
+                name='severity'
+                value={severity}
+                onChange={onChange}
+                required
+              >
+                <option value=''></option>
                 <option value={1}>1</option>
                 <option value={2}>2</option>
                 <option value={3}>3</option>

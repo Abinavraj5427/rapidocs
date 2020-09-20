@@ -53,11 +53,30 @@ const Allergy = () => {
             <div className='tile'>
               <h1>Allergy</h1>
               <label>Allergy Name</label>
-              <input type='text' name='name' value={name} onChange={onChange} />
+              <input
+                type='text'
+                name='name'
+                value={name}
+                onChange={onChange}
+                placeholder='ex: peanut'
+                required
+              />
               <label>Date Discovered</label>
-              <input type='date' name='date' value={date} onChange={onChange} />
+              <input
+                type='date'
+                name='date'
+                value={date}
+                onChange={onChange}
+                required
+              />
               <label>Severity</label>
-              <select name='severity' value={severity} onChange={onChange}>
+              <select
+                name='severity'
+                value={severity}
+                onChange={onChange}
+                required
+              >
+                <option value=''></option>
                 <option value={1}>1</option>
                 <option value={2}>2</option>
                 <option value={3}>3</option>
@@ -70,7 +89,8 @@ const Allergy = () => {
                 <option value={10}>10</option>
               </select>
               <label>Type</label>
-              <select name='type' value={type} onChange={onChange}>
+              <select name='type' value={type} onChange={onChange} required>
+                <option value=''></option>
                 <option value='contact'>contact</option>
                 <option value='inhalation'>inhalation</option>
                 <option value='ingestion'>ingestion</option>

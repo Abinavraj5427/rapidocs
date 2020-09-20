@@ -3,7 +3,7 @@ import firebase from 'firebase';
 
 const Medication = () => {
   const [formData, setFormData] = useState({
-    medicationName: '',
+    name: '',
     doctor: '',
     reason: '',
     dosage: '',
@@ -14,15 +14,7 @@ const Medication = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const {
-    medicationName,
-    doctor,
-    reason,
-    dosage,
-    frequency,
-    start,
-    date,
-  } = formData;
+  const { name, doctor, reason, dosage, frequency, start, date } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -46,7 +38,7 @@ const Medication = () => {
 
     // clear form
     setFormData({
-      medicationName: '',
+      name: '',
       doctor: '',
       reason: '',
       dosage: '',
@@ -69,9 +61,10 @@ const Medication = () => {
               <label>Medication Name</label>
               <input
                 type='text'
-                name='medicationName'
-                value={medicationName}
+                name='name'
+                value={name}
                 onChange={onChange}
+                required
               />
               <label>Date Started</label>
               <input
@@ -88,6 +81,7 @@ const Medication = () => {
                 name='doctor'
                 value={doctor}
                 onChange={onChange}
+                required
               />
               <label>Reason</label>
               <input
@@ -95,6 +89,8 @@ const Medication = () => {
                 name='reason'
                 value={reason}
                 onChange={onChange}
+                placeholder='ex: allergies'
+                required
               />
               <label>Frequency</label>
               <input
@@ -102,6 +98,8 @@ const Medication = () => {
                 name='frequency'
                 value={frequency}
                 onChange={onChange}
+                placeholder='ex: 2x per week'
+                required
               />
               <label>Dosage</label>
               <input
@@ -109,6 +107,8 @@ const Medication = () => {
                 name='dosage'
                 value={dosage}
                 onChange={onChange}
+                placeholder='ex: 200mg'
+                required
               />
               <button type='submit' className='btn'>
                 Add Medication

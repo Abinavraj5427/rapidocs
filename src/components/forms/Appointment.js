@@ -60,6 +60,7 @@ const Appointment = () => {
                 name='location'
                 value={location}
                 onChange={onChange}
+                required
               />
               <label>Doctor</label>
               <input
@@ -67,9 +68,16 @@ const Appointment = () => {
                 name='doctor'
                 value={doctor}
                 onChange={onChange}
+                required
               />
               <label>Date</label>
-              <input type='date' name='date' value={date} onChange={onChange} />
+              <input
+                type='date'
+                name='date'
+                value={date}
+                onChange={onChange}
+                required
+              />
               <label>Time</label>
               <input type='time' name='time' value={time} onChange={onChange} />
               <label>Reason</label>
@@ -78,6 +86,7 @@ const Appointment = () => {
                 name='reason'
                 value={reason}
                 onChange={onChange}
+                required
               />
               <button type='submit' className='btn'>
                 Add Appointment
