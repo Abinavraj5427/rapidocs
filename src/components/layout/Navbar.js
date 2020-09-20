@@ -8,6 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import firebase from "firebase";
 import { MenuContext } from "react-flexible-sliding-menu";
+import logo from '../../assets/logo.PNG'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,6 +55,7 @@ export default function Navbar() {
             </IconButton>
           )}
           <h1>the rapidocs solution</h1>
+          <img src = {logo} id = "logo_banner" ></img>
         </Toolbar>
       </AppBar>
     </div>

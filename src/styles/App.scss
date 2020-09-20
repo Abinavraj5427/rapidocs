@@ -20,7 +20,7 @@ body {
   // overflow: auto;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-  background-color: $dark-color;
+  background-color: black;
   color: $light-color;
   height: 100%;
   // animation: pulse 5s infinite;
@@ -378,4 +378,23 @@ button {
     cursor: pointer;
     color: $light-color;
   }
+}
+
+#logo_banner{
+  height: 70px;
+  width: 70px;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(245, 6, 6); 
 }
