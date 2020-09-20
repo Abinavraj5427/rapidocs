@@ -17,10 +17,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const store = [];
 const Timeline = ({ uid }) => {
   const [entries, setEntries] = useState([]);
+  const [done, setDone] = useState(false);
+
+  function sortFunction(a, b) {
+    if (a[0].child('date').val() > b[0].child('date').val()) return -1;
+    if (a[0].child('date').val() < b[0].child('date').val()) return 1;
+    return 0;
+  }
 
   useEffect(() => {
-    console.log(entries);
+    entries.sort(sortFunction);
+    setTimeout(() => setDone(true), 500);
   }, [entries]);
+
+  useEffect(() => {
+    setEntries([...entries].sort(sortFunction));
+  }, [done]);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(user => {
@@ -82,10 +94,6 @@ const Timeline = ({ uid }) => {
             store.push(el);
           });
         });
-        entries.sort(sortFunction);
-        /*entries = entries.sort(
-          (a, b) => Date(b[0].child('date').val()) - Date(a[0].child('date').val())
-        );*/
       }
     });
   }, []);
@@ -169,11 +177,5 @@ function decideDescription(data, type) {
   if (type === 'Test')
     return 'You had a ' + data.child('title').val() + ' test performed.';
 }
-
-function sortFunction(a,b){  
-    var dateA = new Date(a.date).getTime();
-    var dateB = new Date(b.date).getTime();
-    return dateA > dateB ? 1 : -1;  
-}; 
 
 export default Timeline;
