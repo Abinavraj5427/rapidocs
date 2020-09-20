@@ -42,7 +42,7 @@ const App = () => {
             <Route exact path="/" component={Landing}>
               {userType ? (
                 userType == "patient" ? (
-                  <Redirect to="/records" />
+                  <Redirect to="/profile" />
                 ) : (
                   <Redirect to="/admin" />
                 )

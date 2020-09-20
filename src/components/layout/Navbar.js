@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import firebase from "firebase";
@@ -25,19 +25,24 @@ export default function Navbar() {
   const { toggleMenu } = useContext(MenuContext);
 
   const classes = useStyles();
-  const [landAt, setLandAt] = useState("/");
-  const history = useHistory();
+  const [loggedIn, setLoggedIn] = useState(false);
+  // const history = useHistory();
 
   useEffect(() => {
-    if (firebase.auth().currentUser) setLandAt("/records");
-    else setLandAt("/");
-  }, [firebase.auth().currentUser]);
+    firebase.auth().onAuthStateChanged((user) => {
+      //true if user is an object, false otherwise
+      // setIsSignedIn(!!user);
+      if (!!user) {
+        setLoggedIn(true);
+      } else setLoggedIn(false);
+    });
+  }, []);
 
   return (
     <div className={classes.root}>
       <AppBar position="static" color="transparent">
         <Toolbar>
-          {landAt == "/records" && (
+          {loggedIn && (
             <IconButton
               edge="start"
               className={classes.menuButton}
@@ -49,8 +54,6 @@ export default function Navbar() {
             </IconButton>
           )}
           <h1>the rapidocs solution</h1>
-            
-        
         </Toolbar>
       </AppBar>
     </div>

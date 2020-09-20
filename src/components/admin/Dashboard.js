@@ -18,12 +18,19 @@ const Dashboard = () => {
     //   });
     console.log("search initiated for " + email);
 
-    var ref = db.ref("patients");
+    let ref = db.ref("patients");
     ref
       .orderByChild("name")
       .equalTo(email)
       .on("child_added", function (snapshot) {
-        console.log(snapshot.key);
+        let uid = snapshot.key;
+        if (uid)
+          ref
+            .child(uid)
+            .once("value")
+            .then(function (sn) {
+              console.log(sn.val());
+            });
       });
   }
 

@@ -33,7 +33,7 @@ const Login = () => {
       //true if user is an object, false otherwise
       if (!!user) {
         if (user.email === "admin@admin.com") history.push("/admin");
-        else history.push("/records");
+        else history.push("/profile");
       }
     });
   }, []);
