@@ -69,7 +69,8 @@ const Procedure = () => {
                 onChange={onChange}
               />
               <label>Type of Procedure</label>
-              <select name='type' value={type} onChange={onChange}>
+              <select name='type' value={type} onChange={onChange} required>
+                <option value=''></option>
                 <option value='Cardiology'>Cardiology</option>
                 <option value='Dentistry'>Dentistry</option>
                 <option value='Dermatology'>Dermatology</option>
@@ -92,8 +93,11 @@ const Procedure = () => {
                 <option value='Rheumatology'>Rheumatology</option>
                 <option value='Urology'>Urology</option>
               </select>
-              <input type='submit' className='btn' value = "Add Procedure">
-              </input>
+              <input
+                type='submit'
+                className='btn'
+                value='Add Procedure'
+              ></input>
               {submitted && <p className='saved S'>Procedure Saved</p>}
             </div>
           </div>

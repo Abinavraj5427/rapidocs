@@ -108,7 +108,8 @@ const Diagnosis = () => {
                 onChange={onChange}
               />
               <label>Type of Diagnosis</label>
-              <select name='type' value={type} onChange={onChange}>
+              <select name='type' value={type} onChange={onChange} required>
+                <option value=''></option>
                 <option value='Cardiology'>Cardiology</option>
                 <option value='Dentistry'>Dentistry</option>
                 <option value='Dermatology'>Dermatology</option>
