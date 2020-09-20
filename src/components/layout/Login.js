@@ -101,12 +101,12 @@ const Login = () => {
             <Button variant="contained" onClick={handleSubmit}>
               Log in
             </Button>
-            <Button
+            {/* <Button
               variant="contained"
               onClick={() => history.push("/adminregister")}
             >
               Sign up
-            </Button>
+            </Button> */}
           </div>
           {errorMsg && <p className="admin-auth">{errorMsg}</p>}
         </form>

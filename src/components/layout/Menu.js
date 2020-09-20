@@ -54,7 +54,7 @@ function Menu() {
               onClick={() => history.push("/records")}
               className="menu-link link S"
             >
-              My Records
+              My Forms
             </p>
             <p
               onClick={() => history.push("/doctors")}
