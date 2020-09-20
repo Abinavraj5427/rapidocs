@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { MenuContext } from "react-flexible-sliding-menu";
 import { useHistory } from "react-router-dom";
 import CloseIcon from "@material-ui/icons/Close";
@@ -7,7 +7,18 @@ import firebase from "firebase";
 
 function Menu() {
   const { closeMenu } = useContext(MenuContext);
+  const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
+
+  useEffect(() => {
+    let currUser = firebase.auth().currentUser;
+
+    if (currUser) {
+      if (currUser.email === "admin@admin.com") setCurrentUser("admin");
+      else setCurrentUser("patient");
+    }
+  }, [firebase.auth().currentUser]);
+
   const handleLogout = () => {
     firebase
       .auth()
@@ -31,24 +42,28 @@ function Menu() {
         </IconButton>
       </div>
       <div className="links">
-        <p
-          onClick={() => history.push("/records")}
-          className="menu-link link S"
-        >
-          My Records
-        </p>
-        <p
-          onClick={() => history.push("/doctors")}
-          className="menu-link link S"
-        >
-          My Doctors
-        </p>
-        <p
-          onClick={() => history.push("/profile")}
-          className="menu-link link S"
-        >
-          My Profile
-        </p>
+        {currentUser === "patient" && (
+          <div>
+            <p
+              onClick={() => history.push("/records")}
+              className="menu-link link S"
+            >
+              My Records
+            </p>
+            <p
+              onClick={() => history.push("/doctors")}
+              className="menu-link link S"
+            >
+              My Doctors
+            </p>
+            <p
+              onClick={() => history.push("/profile")}
+              className="menu-link link S"
+            >
+              My Profile
+            </p>
+          </div>
+        )}
         <p onClick={handleLogout} className="menu-link link S">
           Log Out
         </p>
