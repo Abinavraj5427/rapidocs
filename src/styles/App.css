@@ -33,7 +33,7 @@ body input:focus {
   outline: none;
 }
 
-body input[type='submit'] {
+body input[type="submit"] {
   outline: none;
   margin: 2vh;
   text-align: center;
@@ -110,6 +110,61 @@ img {
   text-align: center;
 }
 
+.landing-inner .continue {
+  font-size: 200%;
+}
+
+.landing-inner .continue:hover {
+  cursor: pointer;
+  color: #a239ca;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  margin-top: 15%;
+}
+
+.login-container .login {
+  padding-top: 1vh;
+  padding: 0.7vw;
+  background-color: #e7dfdd;
+  color: #0e0b16;
+  border-radius: 1vh;
+  -webkit-box-shadow: 20px 20px 50px #a139ca86;
+          box-shadow: 20px 20px 50px #a139ca86;
+  text-align: center;
+}
+
+.login-container .login .admin-auth {
+  margin-top: 1vh;
+}
+
+.login-container .login .btn-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,12 +205,12 @@ img {
   margin-bottom: 1.5em;
 }
 
-.form input[type='text'],
-.form input[type='email'],
-.form input[type='password'],
-.form input[type='number'],
-.form input[type='date'],
-.form input[type='file'],
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="number"],
+.form input[type="date"],
+.form input[type="file"],
 .form select,
 .form textarea {
   display: block;
@@ -166,7 +221,7 @@ img {
   font-family: inherit;
 }
 
-.form input[type='submit'],
+.form input[type="submit"],
 button {
   font-family: inherit;
   margin-top: 1em;
@@ -297,16 +352,21 @@ button {
   color: black;
 }
 
-.form .center .tile input[type='text'],
-.form .center .tile input[type='date'] {
+.form .center .tile select,
+.form .center .tile input[type="text"],
+.form .center .tile input[type="time"],
+.form .center .tile input[type="file"],
+.form .center .tile input[type="date"] {
   margin-bottom: 4vh;
   margin-top: 1vh;
   border-style: solid;
   border-width: 2px;
   border-color: gray;
+  font-size: 0.7em;
 }
 
-.form .center .tile input[type='submit'] {
+.form .center .tile input[type="submit"],
+.form .center .tile button {
   background-color: #a239ca;
   color: white;
   padding: 0.4em 1.3em;
@@ -315,13 +375,15 @@ button {
 }
 
 @media screen and (min-width: 200px) {
-  .form .center .tile input[type='submit'] {
+  .form .center .tile input[type="submit"],
+  .form .center .tile button {
     width: 80%;
   }
 }
 
 @media screen and (min-width: 600px) {
-  .form .center .tile input[type='submit'] {
+  .form .center .tile input[type="submit"],
+  .form .center .tile button {
     width: 50%;
   }
 }

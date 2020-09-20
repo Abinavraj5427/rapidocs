@@ -47,7 +47,6 @@ const Allergy = () => {
 
   return (
     <Fragment>
-      {submitted && <p className='saved S'>Procedure Saved</p>}
       <form className='form' onSubmit={onSubmit}>
         <div className='center'>
           <div className='verticalAlign'>
@@ -79,6 +78,7 @@ const Allergy = () => {
               <button type='submit' className='btn'>
                 Add Allergy
               </button>
+              {submitted && <p className='saved S'>Allergy Saved</p>}
             </div>
           </div>
         </div>

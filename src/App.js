@@ -5,7 +5,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import "./styles/App.css";
 import Routes from "./components/routing/Routes";
 import Landing from "./components/layout/Landing";

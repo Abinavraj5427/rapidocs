@@ -57,7 +57,7 @@ body {
   //   }
   // }
 
-  input[type='submit'] {
+  input[type="submit"] {
     outline: none;
     margin: 2vh;
     text-align: center;
@@ -125,6 +125,46 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  .continue {
+    font-size: 200%;
+  }
+  .continue:hover {
+    cursor: pointer;
+    color: $accent-color;
+    transition: 0.3s;
+  }
+}
+
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-top: 15%;
+
+  .login {
+    padding-top: 1vh;
+    padding: 0.7vw;
+    background-color: $light-color;
+    color: $dark-color;
+    border-radius: 1vh;
+    box-shadow: 20px 20px 50px #a139ca86;
+    text-align: center;
+
+    .admin-auth {
+      margin-top: 1vh;
+    }
+
+    .btn-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  }
 }
 
 .navbar {
@@ -160,12 +200,12 @@ img {
   margin-bottom: 1.5em;
 }
 
-.form input[type='text'],
-.form input[type='email'],
-.form input[type='password'],
-.form input[type='number'],
-.form input[type='date'],
-.form input[type='file'],
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="number"],
+.form input[type="date"],
+.form input[type="file"],
 .form select,
 .form textarea {
   display: block;
@@ -176,7 +216,7 @@ img {
   font-family: inherit;
 }
 
-.form input[type='submit'],
+.form input[type="submit"],
 button {
   font-family: inherit;
   margin-top: 1em;
@@ -275,16 +315,21 @@ button {
       label {
         color: black;
       }
-      input[type='text'],
-      input[type='date'] {
+      select,
+      input[type="text"],
+      input[type="time"],
+      input[type="file"],
+      input[type="date"] {
         margin-bottom: 4vh;
         margin-top: 1vh;
         border-style: solid;
         border-width: 2px;
         border-color: gray;
+        font-size: 0.7em;
       }
 
-      input[type='submit'] {
+      input[type="submit"],
+      button {
         background-color: $accent-color;
         color: white;
         padding: 0.4em 1.3em;
@@ -303,23 +348,22 @@ button {
   }
 }
 
-.Menu{
+.Menu {
   padding: 1rem;
   position: relative;
   background: #282828;
   height: 100%;
-  
-  .menu-link{
-  
-    color:$light-color;
+
+  .menu-link {
+    color: $light-color;
     margin-top: 2vh;
     margin-bottom: 2vh;
     padding: 5px;
   }
-  
-  .menu-link:hover{
+
+  .menu-link:hover {
     background-color: $accent-color;
-    cursor:pointer;
+    cursor: pointer;
   }
 
   button {
