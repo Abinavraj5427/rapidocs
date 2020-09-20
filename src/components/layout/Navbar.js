@@ -48,9 +48,9 @@ export default function Navbar() {
               <MenuIcon />
             </IconButton>
           )}
-          <Typography variant="h6" className={classes.title}>
-            the rapidocs solution
-          </Typography>
+          <h1>the rapidocs solution</h1>
+            
+        
         </Toolbar>
       </AppBar>
     </div>
