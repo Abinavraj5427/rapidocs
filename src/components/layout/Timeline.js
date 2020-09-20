@@ -82,9 +82,10 @@ const Timeline = ({ uid }) => {
             store.push(el);
           });
         });
-        entries.sort(
-          (a, b) => b[0].child('date').val() - a[0].child('date').val()
-        );
+        entries.sort(sortFunction);
+        /*entries = entries.sort(
+          (a, b) => Date(b[0].child('date').val()) - Date(a[0].child('date').val())
+        );*/
       }
     });
   }, []);
@@ -168,5 +169,11 @@ function decideDescription(data, type) {
   if (type === 'Test')
     return 'You had a ' + data.child('title').val() + ' test performed.';
 }
+
+function sortFunction(a,b){  
+    var dateA = new Date(a.date).getTime();
+    var dateB = new Date(b.date).getTime();
+    return dateA > dateB ? 1 : -1;  
+}; 
 
 export default Timeline;
