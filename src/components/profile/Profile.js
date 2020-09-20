@@ -237,9 +237,8 @@ const Profile = () => {
               required
             ></input>
           </div>
-
-          <input type='submit' value='Save'></input>
           {submitted && <p className='saved S'>Profile Saved</p>}
+          <input type='submit' value='Save' />
         </div>
       </form>
     </div>
