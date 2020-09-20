@@ -1,12 +1,19 @@
 import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
+import admin from "../../firebase";
 
 const Dashboard = () => {
   const history = useHistory();
   const [email, setEmail] = useState('');
 
   function searchData(){
-    
+    admin.auth().getUserByEmail(email)
+    .then(function(userRecord) {
+      console.log('Successfully fetched user data:', userRecord.toJSON());
+    })
+    .catch(function(error) {
+      console.log('Error fetching user data:', error);
+    });
   }
 
   return (
@@ -17,8 +24,7 @@ const Dashboard = () => {
             <div className = "tile">
               <label>Enter Email</label>
               <input type = "text" value = {email} onChange = {e => setEmail(e.target.value)} placeholder = "abc@gmail.com"></input>
-              <input type='submit' className='btn' onClick = {() => {searchData()}} value = "Search Details">
-              </input>
+              <input type='submit' className='btn' onClick = {(e) => {e.preventDefault(); searchData();}} value = "Search Details"></input>
             </div>
           </div>
         </div>
