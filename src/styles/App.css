@@ -1,4 +1,5 @@
 /* variables */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 /* defaults */
 * {
   -webkit-box-sizing: border-box;
@@ -8,7 +9,7 @@
 }
 
 body {
-  font-family: 'Futura', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   background-color: #0e0b16;
   color: #e7dfdd;
