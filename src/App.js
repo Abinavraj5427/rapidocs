@@ -1,28 +1,28 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
-} from "react-router-dom";
+} from 'react-router-dom';
 // import { useHistory } from "react-router-dom";
-import "./styles/App.css";
-import Routes from "./components/routing/Routes";
-import Landing from "./components/layout/Landing";
-import Navbar from "./components/layout/Navbar";
-import firebase from "firebase";
-import MenuProvider from "react-flexible-sliding-menu";
-import Menu from "./components/layout/Menu";
+import './styles/App.css';
+import Routes from './components/routing/Routes';
+import Landing from './components/layout/Landing';
+import Navbar from './components/layout/Navbar';
+import firebase from 'firebase';
+import MenuProvider from 'react-flexible-sliding-menu';
+import Menu from './components/layout/Menu';
 
 const App = () => {
   const [userType, setUser] = useState(null);
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged(user => {
       //true if user is an object, false otherwise
       // setIsSignedIn(!!user);
       if (!!user) {
-        if (user.email === "admin@admin.com") setUser("admin");
-        else setUser("patient");
+        if (user.email === 'admin@admin.com') setUser('admin');
+        else setUser('patient');
       }
     });
   }, []);
@@ -36,15 +36,15 @@ const App = () => {
   return (
     <Router>
       <Fragment>
-        <MenuProvider MenuComponent={Menu} animation="push">
+        <MenuProvider MenuComponent={Menu} animation='push'>
           <Navbar />
           <Switch>
-            <Route exact path="/" component={Landing}>
+            <Route exact path='/' component={Landing}>
               {userType ? (
-                userType == "patient" ? (
-                  <Redirect to="/profile" />
+                userType === 'patient' ? (
+                  <Redirect to='/profile' />
                 ) : (
-                  <Redirect to="/admin" />
+                  <Redirect to='/admin' />
                 )
               ) : (
                 <div></div>

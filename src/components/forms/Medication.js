@@ -9,7 +9,7 @@ const Medication = () => {
     dosage: '',
     frequency: '',
     start: '',
-    end: '',
+    date: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -21,7 +21,7 @@ const Medication = () => {
     dosage,
     frequency,
     start,
-    end,
+    date,
   } = formData;
 
   const onChange = e =>
@@ -52,7 +52,7 @@ const Medication = () => {
       dosage: '',
       frequency: '',
       start: '',
-      end: '',
+      date: '',
     });
 
     setSubmitted(true);
@@ -80,8 +80,8 @@ const Medication = () => {
                 value={start}
                 onChange={onChange}
               />
-              <label>Date Ended</label>
-              <input type='date' name='end' value={end} onChange={onChange} />
+              <label>Date dateed</label>
+              <input type='date' name='date' value={date} onChange={onChange} />
               <label>Doctor Who Prescribed</label>
               <input
                 type='text'
