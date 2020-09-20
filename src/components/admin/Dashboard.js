@@ -1,9 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 
 const Dashboard = () => {
   const history = useHistory();
-  return <h1>Admin dashboard</h1>;
+  const [email, setEmail] = useState('');
+  return (
+    <div>
+      <form className = "form">
+        <div className = "center">
+          <div className = "verticalAlign">
+            <div className = "tile">
+              <label>Enter Email</label>
+              <input type = "text" value = {email} onChange = {e => setEmail(e.target.value)} placeholder = "abc@gmail.com"></input>
+              <input type='submit' className='btn' onClick = {() => {}} value = "Search Details">
+              </input>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  )
 };
 
 export default Dashboard;

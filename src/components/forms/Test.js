@@ -105,9 +105,8 @@ const TestForm = props => {
                 onChange={onChange}
                 id='fileInputID'
               />
-              <button type='submit' className='btn'>
-                Add Test
-              </button>
+              <input type='submit' className='btn' value = "Add Test">
+              </input>
               {submitted && <p className='saved S'>Test Saved</p>}
             </div>
           </div>

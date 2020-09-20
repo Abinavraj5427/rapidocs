@@ -92,9 +92,8 @@ const Procedure = () => {
                 <option value='Rheumatology'>Rheumatology</option>
                 <option value='Urology'>Urology</option>
               </select>
-              <button type='submit' className='btn'>
-                Add Procedure
-              </button>
+              <input type='submit' className='btn' value = "Add Procedure">
+              </input>
               {submitted && <p className='saved S'>Procedure Saved</p>}
             </div>
           </div>
