@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import db from "../../firebase";
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+
 
 const Dashboard = () => {
   const history = useHistory();
@@ -31,18 +34,7 @@ const Dashboard = () => {
 
   function createPDF(values){
     console.log(values)
-    var fonts = {
-      Roboto: {
-        normal: '../../../assets/fonts/Roboto-Regular.ttf',
-        bold: '../../../assets/fonts/Roboto-Medium.ttf',
-        italics: '../../../assets/fonts/Roboto-Italic.ttf',
-        bolditalics: '../../../assets/fonts/Roboto-MediumItalic.ttf'
-      }
-    };
-    
-    var PdfPrinter = require('pdfmake');
-    var printer = new PdfPrinter(fonts);
-    var fs = require('fs');
+    pdfMake.vfs = pdfFonts.pdfMake.vfs;
   
     var address = "28011 Bracken Hurst Drive";
     var birthday = "4414-04-04";
@@ -64,7 +56,7 @@ const Dashboard = () => {
       }
     ]
   
-    var allTests = values.tests;
+    var allTests = values.tests? values.tests: {};
   
     Object.keys(allTests).map(test => {
       tests.push("Date: "+allTests[test].date);
@@ -79,7 +71,7 @@ const Dashboard = () => {
       }
     ]
   
-    var allDoctors = values.doctors;
+    var allDoctors = values.doctors? values.doctors: {};
   
     Object.keys(allDoctors).map(entry => {
       doctors.push("Name: "+allDoctors[entry].name);
@@ -95,7 +87,7 @@ const Dashboard = () => {
       }
     ]
   
-    var allAllergy = values.allergies;
+    var allAllergy = values.allergies? values.allergies: {};
   
     Object.keys(allAllergy).map(entry => {
       allergies.push("Name: "+allAllergy[entry].name);
@@ -112,7 +104,7 @@ const Dashboard = () => {
       }
     ]
   
-    var allAppointments = values.appointments;
+    var allAppointments = values.appointments? values.appointments: {};
   
     Object.keys(allAppointments).map(entry => {
       appointments.push("Doctor: "+allAppointments[entry].doctor);
@@ -130,7 +122,7 @@ const Dashboard = () => {
       }
     ]
   
-    var allDiagnosis = values.diagnosis;
+    var allDiagnosis = values.diagnosis? values.diagnosis: {};
   
     Object.keys(allDiagnosis).map(entry => {
       diagnosis.push("Doctor: "+allDiagnosis[entry].doctor);
@@ -149,7 +141,7 @@ const Dashboard = () => {
       }
     ]
   
-    var allMeds = values.medications;
+    var allMeds = values.medications? values.medications: {};
   
     Object.keys(allMeds).map(entry => {
       meds.push("Doctor: "+allMeds[entry].doctor);
@@ -169,7 +161,7 @@ const Dashboard = () => {
       }
     ]
   
-    var allProcedures = values.procedures;
+    var allProcedures = values.procedures? values.procedures: {};
   
     Object.keys(allProcedures).map(entry => {
       procedures.push("Location: "+allProcedures[entry].location);
@@ -221,10 +213,10 @@ const Dashboard = () => {
           }
       }
     };
-    
-    var pdfDoc = printer.createPdfKitDocument(docDefinition);
-    pdfDoc.pipe(fs.createWriteStream('document.pdf'));
-    pdfDoc.end();
+    pdfMake.createPdf(docDefinition).download();
+    // var pdfDoc = printer.createPdfKitDocument(docDefinition);
+    // pdfDoc.pipe(fs.createWriteStream('document.pdf'));
+    // pdfDoc.end();
   }
 
   return (
